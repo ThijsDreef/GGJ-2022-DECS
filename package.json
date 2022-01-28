@@ -1,0 +1,28 @@
+{
+  "name": "ggj-2022-decs",
+  "version": "0.0.0",
+  "description": "* GGJ entry 2022 \r 4 developers working on their global game jam entry using a custom made JS based ECS game engine called DECS.\r DECS is currently still in closed source development, thats why it is linked using a private SSH npm package.\r If anyone wants access to the decs js repo they can reach out to me personnaly I will then disclose the source.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ThijsDreef/GGJ-2022-DECS.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ThijsDreef/GGJ-2022-DECS/issues"
+  },
+  "homepage": "https://github.com/ThijsDreef/GGJ-2022-DECS#readme",
+  "dependencies": {
+    "decs": "git+ssh://git@github.com/ThijsDreef/Decs-js.git",
+    "gl-mat4": "^1.2.0",
+    "glslify-loader": "^2.0.0",
+    "raw-loader": "^4.0.2",
+    "webpack": "^5.66.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.7.3"
+  }
+}

@@ -1,0 +1,4 @@
+* GGJ entry 2022 
+4 developers working on their global game jam entry using a custom made JS based ECS game engine called DECS.
+DECS is currently still in closed source development, thats why it is linked using a private SSH npm package.
+If anyone wants access to the decs js repo they can reach out to me personnaly I will then disclose the source.
