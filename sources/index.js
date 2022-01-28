@@ -12,7 +12,12 @@ gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
 const main = async () => {
     const decs = new Decs(gl);
     await decs.loadManifest({
-	
+	texture: [
+	    { name: 'assets', url: 'assets/texture.png', filter: 'NEAREST' },
+	],
+	sprites: [
+	    'assets/texture.json',
+	],
     });
 
     decs.resources.shaders.createShader(
