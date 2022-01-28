@@ -8,6 +8,7 @@ import strawberry from '../entities/strawberry';
 import blueberry from '../entities/blueberry';
 import movementSystem from '../systems/movementSystem';
 import playerMovementSystem from '../systems/playerMovementSystem';
+import aggroSystem from '../systems/aggroSystem';
 
 export default (decs, canvas, gl) => {
   const scene = decs.createScene();
@@ -16,13 +17,14 @@ export default (decs, canvas, gl) => {
   });
 
   const player = playerEntity(scene, [0, 0, -1], [0, 0, 0], [16, 16, 1]);
-  strawberry(scene, [64, 0, -1], [0, 0, 0], [16, 16, 1]);
+  strawberry(scene, [64, 350, -1], [0, 0, 0], [16, 16, 1]);
   blueberry(scene, [-64, 0, -1], [0, 0, 0], [16, 16, 1]);
 
   scene.addSystem(meshRenderer);
   scene.addSystem(calculateTransforms);
   scene.addSystem(movementSystem);
   scene.addSystem(playerMovementSystem);
+  scene.addSystem(aggroSystem);
 
   scene.update(0);
   scene.executeOnDispose(inputHandler(scene, player, {

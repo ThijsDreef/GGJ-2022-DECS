@@ -17,5 +17,9 @@ export default (scene, position, rotation, scale) => {
 	    ]),
     ],
     active: {},
+    aggro: {
+      distance: 32 * 10,
+      target: ["player"],
+    },
   });
 };
