@@ -8,7 +8,7 @@ export default (scene, position, rotation, scale) => {
 		position,
 		rotation,
 		scale,
-		acceleration: [0, 20, 0],
+		acceleration: [0, 0],
 		transform: transform(),
 		mesh: scene.resources.geometry.getModel('sprite'),
 		materials: [
