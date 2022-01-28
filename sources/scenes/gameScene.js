@@ -1,36 +1,36 @@
 import camera from 'decs/Components/camera';
+import meshRenderer from 'decs/systems/meshRenderer';
+import calculateTransforms from 'decs/systems/calculateTransforms';
+import inputHandler from 'decs/Utils/inputHandler';
 import resizeHandler from '../onDispose/resizeHandler';
 import playerEntity from '../entities/playerEntity';
 import strawberry from '../entities/strawberry';
 import blueberry from '../entities/blueberry';
-import meshRenderer from 'decs/systems/meshRenderer';
-import calculateTransforms from 'decs/systems/calculateTransforms';
 import movementSystem from '../systems/movementSystem';
-import inputHandler from 'decs/Utils/inputHandler';
 import playerMovementSystem from '../systems/playerMovementSystem';
 
 export default (decs, canvas, gl) => {
-    const scene = decs.createScene();
-    scene.addComponent(scene.createEntity(), {
-	camera: camera(),
-    });
+  const scene = decs.createScene();
+  scene.addComponent(scene.createEntity(), {
+    camera: camera(),
+  });
 
-    const player = playerEntity(scene, [0, 0, -1], [0, 0, 0], [16, 16, 1]);
-    strawberry(scene, [64, 0, -1], [0, 0, 0], [16, 16, 1]);
-    blueberry(scene, [-64, 0, -1], [0, 0, 0], [16, 16, 1]);
+  const player = playerEntity(scene, [0, 0, -1], [0, 0, 0], [16, 16, 1]);
+  strawberry(scene, [64, 0, -1], [0, 0, 0], [16, 16, 1]);
+  blueberry(scene, [-64, 0, -1], [0, 0, 0], [16, 16, 1]);
 
-    scene.addSystem(meshRenderer);
-    scene.addSystem(calculateTransforms);
-    scene.addSystem(movementSystem);
-    scene.addSystem(playerMovementSystem);
+  scene.addSystem(meshRenderer);
+  scene.addSystem(calculateTransforms);
+  scene.addSystem(movementSystem);
+  scene.addSystem(playerMovementSystem);
 
-    scene.update(0);
-    scene.executeOnDispose(inputHandler(scene, player, {
-        a: 'moveLeft',
-        s: 'moveDown',
-        d: 'moveRight',
-        w: 'moveUp',
-    }))
-    scene.executeOnDispose(resizeHandler(scene, canvas, gl));
-    return scene;
+  scene.update(0);
+  scene.executeOnDispose(inputHandler(scene, player, {
+    a: 'moveLeft',
+    s: 'moveDown',
+    d: 'moveRight',
+    w: 'moveUp',
+  }));
+  scene.executeOnDispose(resizeHandler(scene, canvas, gl));
+  return scene;
 };
