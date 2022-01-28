@@ -4,7 +4,8 @@
   "description": "* GGJ entry 2022 \r 4 developers working on their global game jam entry using a custom made JS based ECS game engine called DECS.\r DECS is currently still in closed source development, thats why it is linked using a private SSH npm package.\r If anyone wants access to the decs js repo they can reach out to me personnaly I will then disclose the source.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint . --no-ignore --fix --cache"
   },
   "repository": {
     "type": "git",
@@ -24,5 +25,10 @@
     "webpack": "^5.66.0",
     "webpack-cli": "^4.9.1",
     "webpack-dev-server": "^4.7.3"
+  },
+  "devDependencies": {
+    "eslint": "^8.8.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.4"
   }
 }
