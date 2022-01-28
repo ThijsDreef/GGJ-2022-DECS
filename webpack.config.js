@@ -9,9 +9,9 @@ module.exports = {
       test: /\.(vert|frag)/,
       use: [
         'raw-loader',
-        'glslify-loader'
+        'glslify-loader',
       ],
-    }]
+    }],
   },
   output: {
     filename: 'bundle.js',
