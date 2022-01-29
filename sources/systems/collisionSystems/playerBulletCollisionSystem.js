@@ -2,7 +2,7 @@ import collisionSystemHelper from './collisionSystemHelper';
 
 export default (scene) => {
   collisionSystemHelper(scene, ['strawberry'], ['playerBullet'], (characterEntity, bulletEntity) => {
-    scene.deleteEntity(characterEntity.id);
+    characterEntity.data.health -= bulletEntity.data.damage;
     scene.deleteEntity(bulletEntity.id);
   });
 };

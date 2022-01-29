@@ -18,6 +18,7 @@ const defaultShoot = (scene, position, direction) => {
       ]),
     ],
     playerBullet: {},
+    damage: 25,
   });
 };
 
@@ -45,6 +46,7 @@ export default (scene, position, rotation, scale) => {
     player: {},
     active: {},
     heading: [0, 0],
+    health: 50,
   });
 
   return player;
