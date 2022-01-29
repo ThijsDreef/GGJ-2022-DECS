@@ -8,9 +8,9 @@ export default (scene, canvas, gl) => {
     gl.viewport(0, 0, canvas.width, canvas.height);
 
     scene.query(['camera'], ({ camera }) => {
-      const { width } = canvas;
-      const { height } = canvas;
-      const aspect = width / height;
+      const { width, height } = canvas;
+
+      const aspect = (width / height);
       const psh = (WorldSpaceScreen.height / 2);
       if (width > height) {
         mat4.ortho(camera.projection, -aspect * psh, aspect * psh, -psh, psh, 1, 100);

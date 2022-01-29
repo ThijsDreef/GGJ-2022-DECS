@@ -1,7 +1,7 @@
 export default (scene) => {
   let mousePos;
-  scene.query(['mousePosition'], ({ mousePosition }) => {
-    mousePos = mousePosition; // setting mouse position
+  scene.query(['crosshair', 'position'], ({ position }) => {
+    mousePos = position; // setting mouse position
   });
   scene.query(['position', 'heading'], ({ position, heading }) => {
     const headingTemp = [

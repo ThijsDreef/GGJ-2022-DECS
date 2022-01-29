@@ -10,8 +10,11 @@ export default (scene, canvas) => {
       cameraTemp = camera;
     });
 
-    const mat = mat4.create();
-    mat4.invert(mat, cameraTemp.projection);
+    const invproj = mat4.create();
+    mat4.invert(invproj, cameraTemp.projection);
+
+    const invCamera = mat4.create();
+    mat4.invert(invCamera, cameraTemp.view);
 
     scene.query(['mousePosition'], ({ mousePosition }) => {
       // Create new vec4 to hold transformed coordinate.
@@ -21,9 +24,9 @@ export default (scene, canvas) => {
       position[1] = -((e.y / canvas.height) * 2 - 1);
       position[2] = 1;
       // Transform coordinate by inverse of projection to find coord before projection.
-      vec4.transformMat4(position, position, mat);
+      vec4.transformMat4(position, position, invproj);
+
       // Transform coordinate by view matrix to get the point after view transform.
-      vec4.transformMat4(position, position, cameraTemp.view);
 
       // Store mouse position in component.
       mousePosition[0] = position[0];
