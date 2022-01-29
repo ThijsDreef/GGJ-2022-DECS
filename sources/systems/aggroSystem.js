@@ -6,7 +6,7 @@ export default (scene) => {
       const distance = Math.sqrt((x * x) + (y * y));
       if (distance <= aggro.distance) {
         scene.removeComponent(id, ['aggro']);
-        scene.addcomponent(id, {
+        scene.addComponent(id, {
           target: position,
         });
       }
