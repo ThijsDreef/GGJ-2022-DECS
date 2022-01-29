@@ -17,7 +17,7 @@ const defaultShoot = (scene, position, direction) => {
         { name: 'textureAtlas', value: scene.resources.texture.getTexture('assets') },
       ]),
     ],
-
+    enemyBullet: {},
   });
 };
 
@@ -45,7 +45,7 @@ export default (scene, position, rotation, scale) => {
       },
     },
     heading: [0, 0],
-
+    strawberry: {},
     gun: {
       shoot: defaultShoot,
       cooldown: 0.3,

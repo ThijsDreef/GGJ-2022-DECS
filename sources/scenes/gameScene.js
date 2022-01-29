@@ -17,12 +17,16 @@ import headingPlayerSystem from '../systems/headingPlayerSystem';
 import headingEnemySystem from '../systems/headingEnemySystem';
 import ShootSystem from '../systems/ShootSystem';
 import animate2D from 'decs/Systems/animate2D';
-
+import shootSystem from '../systems/shootSystem';
+import playerBulletCollisionSystem from '../systems/collisionSystems/playerBulletCollisionSystem';
+import enemyBulletCollisionSystem from '../systems/collisionSystems/enemyBulletCollisionSystem';
 export default (decs, canvas, gl) => {
   const scene = decs.createScene();
   scene.addComponent(scene.createEntity(), {
     camera: camera(),
   });
+  const input = scene.createEntity();
+  scene.addComponent(input, { input: {} });
 
   scene.update(0);
   scene.executeOnDispose(resizeHandler(scene, canvas, gl));
@@ -44,10 +48,13 @@ export default (decs, canvas, gl) => {
   scene.addSystem(aggroSystem);
   scene.addSystem(headingPlayerSystem);
   scene.addSystem(headingEnemySystem);
+  scene.addSystem(shootSystem);
+  scene.addSystem(playerBulletCollisionSystem);
+  scene.addSystem(enemyBulletCollisionSystem);
   scene.addSystem(ShootSystem);
   scene.addSystem(animate2D);
 
-  scene.executeOnDispose(inputHandler(scene, player, {
+  scene.executeOnDispose(inputHandler(scene, input, {
     w: 'moveUp',
     a: 'moveLeft',
     s: 'moveDown',
