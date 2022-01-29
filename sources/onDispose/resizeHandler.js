@@ -7,7 +7,7 @@ export default (scene, canvas, gl) => {
     canvas.height = canvas.clientHeight * window.devicePixelRatio;
     gl.viewport(0, 0, canvas.width, canvas.height);
 
-    scene.query(['camera'], ({ camera }, eid) => {
+    scene.query(['camera'], ({ camera }) => {
       const { width } = canvas;
       const { height } = canvas;
       const aspect = width / height;

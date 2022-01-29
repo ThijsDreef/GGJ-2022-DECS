@@ -1,8 +1,8 @@
 export default (scene, entity) => {
-  const mouseUp = (e) => {
+  const mouseUp = () => {
     scene.removeComponent(entity, { mouseDown: {} });
   };
-  const mouseDown = (e) => {
+  const mouseDown = () => {
     scene.addComponent(entity, { mouseDown: {} });
   };
 

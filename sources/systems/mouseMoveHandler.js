@@ -17,8 +17,8 @@ export default (scene, canvas) => {
       // Create new vec4 to hold transformed coordinate.
       const position = vec4.create();
       // Set coord to NDC coordinates.
-      position[0] = e.x / canvas.width * 2 - 1;
-      position[1] = -(e.y / canvas.height * 2 - 1);
+      position[0] = (e.x / canvas.width) * 2 - 1;
+      position[1] = -((e.y / canvas.height) * 2 - 1);
       position[2] = 1;
       // Transform coordinate by inverse of projection to find coord before projection.
       vec4.transformMat4(position, position, mat);

@@ -11,5 +11,9 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
+    'import/no-unresolved': 'off',
+    'prefer-destructuring': 'off',
+    'no-param-reassign': 'off',
+    'no-nested-ternary': 'off',
   },
 };

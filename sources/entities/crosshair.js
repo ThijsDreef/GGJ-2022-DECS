@@ -1,5 +1,5 @@
-import transform from 'Decs/Components/transform';
-import material from 'Decs/Components/material';
+import transform from 'decs/Components/transform';
+import material from 'decs/Components/material';
 
 export default (scene, position, rotation, scale) => {
   const crosshair = scene.createEntity();
