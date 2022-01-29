@@ -69,8 +69,6 @@ export default (decs, canvas, gl) => {
   }, decs.resources.texture.getTexture('assets'), gl);
 
   const player = playerEntity(scene, mapToTile(16, 16, -2), [0, 0, 0], [48, 48, 1]);
-  strawberry(scene, mapToTile(28, 28, -2), [0, 0, 0], [16, 16, 1]);
-  blueberry(scene, mapToTile(1, 4, -2), [0, 0, 0], [16, 16, 1]);
   crosshair(scene, [0, 0, -1], [0, 0, 0], [12, 12, 1]);
 
   scene.update(0);
