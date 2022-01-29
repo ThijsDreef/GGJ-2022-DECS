@@ -12,7 +12,5 @@ export default (scene) => {
     const length = Math.sqrt(x * x + y * y); // calculating length of vector for normal
     heading[0] = headingTemp[0] / length; // set heading
     heading[1] = headingTemp[1] / length;
-
-    console.log(heading);
   }, ['active', 'player']);
 };
