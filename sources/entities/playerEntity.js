@@ -6,14 +6,14 @@ const defaultShoot = (scene, position, direction) => {
   scene.addComponent(bullet, {
     position: [...position],
     rotation: [0, 0, 0],
-    scale: [4, 4],
+    scale: [6, 6],
     active: {},
     acceleration: [...direction].map((item) => item * 1000),
     transform: transform(),
     mesh: scene.resources.geometry.getModel('sprite'),
     materials: [
       material('sprite', [
-        { name: 'textureMatrix', value: scene.resources.sprites.getSpriteTransformation('red-enemy-idle1.png') },
+        { name: 'textureMatrix', value: scene.resources.sprites.getSpriteTransformation('Bullet1.png') },
         { name: 'textureAtlas', value: scene.resources.texture.getTexture('assets') },
       ]),
     ],
