@@ -15,7 +15,7 @@ import crosshair from '../entities/crosshair';
 import aggroSystem from '../systems/aggroSystem';
 import headingPlayerSystem from '../systems/headingPlayerSystem';
 import headingEnemySystem from '../systems/headingEnemySystem';
-import ShootSystem from '../systems/ShootSystem';
+import shootSystem from '../systems/shootSystem';
 import playerBulletCollisionSystem from '../systems/collisionSystems/playerBulletCollisionSystem';
 import enemyBulletCollisionSystem from '../systems/collisionSystems/enemyBulletCollisionSystem';
 
@@ -47,7 +47,7 @@ export default (decs, canvas, gl) => {
   scene.addSystem(aggroSystem);
   scene.addSystem(headingPlayerSystem);
   scene.addSystem(headingEnemySystem);
-  scene.addSystem(ShootSystem);
+  scene.addSystem(shootSystem);
   scene.addSystem(playerBulletCollisionSystem);
   scene.addSystem(enemyBulletCollisionSystem);
 
