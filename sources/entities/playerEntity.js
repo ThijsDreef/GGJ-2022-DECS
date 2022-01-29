@@ -6,7 +6,7 @@ const playerBasicWeaponProxy = (
   scene,
   position,
   direction,
-) => defaultShoot(scene, position, direction, true);
+) => defaultShoot(scene, position, direction, true, 15);
 
 export default (scene, position, rotation, scale) => {
   const player = scene.createEntity();

@@ -7,7 +7,7 @@ const blueberryProxy = (
   scene,
   position,
   direction,
-) => shotGunShoot(scene, position, direction, false);
+) => shotGunShoot(scene, position, direction, false, 5);
 export default (scene, position, rotation, scale) => {
   const blueberry = scene.createEntity();
   const data = {

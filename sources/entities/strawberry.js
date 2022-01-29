@@ -7,7 +7,7 @@ const strawberryProxy = (
   scene,
   position,
   direction,
-) => defaultShoot(scene, position, direction, false);
+) => defaultShoot(scene, position, direction, false, 10);
 
 export default (scene, position, rotation, scale) => {
   const strawberry = scene.createEntity();
