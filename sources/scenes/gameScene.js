@@ -23,6 +23,7 @@ import playerBulletCollisionSystem from '../systems/collisionSystems/playerBulle
 import enemyBulletCollisionSystem from '../systems/collisionSystems/enemyBulletCollisionSystem';
 import playerTileCollisionSystem from '../systems/collisionSystems/playerTileCollisionSystem';
 import healthSystem from '../systems/healthSystem';
+import timerSystem from '../systems/timerSystem';
 
 const TILE_WIDTH = 32;
 const TILE_HEIGHT = 32;
@@ -87,6 +88,9 @@ export default (decs, canvas, gl) => {
   const input = scene.createEntity();
   scene.addComponent(input, { input: {} });
 
+  const timer = scene.createEntity();
+  scene.addComponent(timer, { timer: 0 });
+
   scene.update(0);
   scene.executeOnDispose(resizeHandler(scene, canvas, gl));
 
@@ -109,6 +113,7 @@ export default (decs, canvas, gl) => {
   scene.addSystem(enemyBulletCollisionSystem);
   scene.addSystem(animate2D);
   scene.addSystem(healthSystem);
+  scene.addSystem(timerSystem);
 
   scene.executeOnDispose(inputHandler(scene, input, {
     w: 'moveUp',
