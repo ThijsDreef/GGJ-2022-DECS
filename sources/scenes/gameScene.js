@@ -10,14 +10,13 @@ import movementSystem from '../systems/movementSystem';
 import playerMovementSystem from '../systems/playerMovementSystem';
 import mouseClickHandler from '../onDispose/mouseClickHandler';
 import mouseMoveHandler from '../onDispose/mouseMoveHandler';
+import shootSystem from '../systems/shootSystem';
 import crosshairMovementSystem from '../systems/crosshairMovementSystem';
 import crosshair from '../entities/crosshair';
 import aggroSystem from '../systems/aggroSystem';
 import headingPlayerSystem from '../systems/headingPlayerSystem';
 import headingEnemySystem from '../systems/headingEnemySystem';
-import ShootSystem from '../systems/ShootSystem';
 import animate2D from 'decs/Systems/animate2D';
-import shootSystem from '../systems/shootSystem';
 import playerBulletCollisionSystem from '../systems/collisionSystems/playerBulletCollisionSystem';
 import enemyBulletCollisionSystem from '../systems/collisionSystems/enemyBulletCollisionSystem';
 export default (decs, canvas, gl) => {
@@ -51,7 +50,6 @@ export default (decs, canvas, gl) => {
   scene.addSystem(shootSystem);
   scene.addSystem(playerBulletCollisionSystem);
   scene.addSystem(enemyBulletCollisionSystem);
-  scene.addSystem(ShootSystem);
   scene.addSystem(animate2D);
 
   scene.executeOnDispose(inputHandler(scene, input, {
