@@ -16,6 +16,7 @@ import aggroSystem from '../systems/aggroSystem';
 import headingPlayerSystem from '../systems/headingPlayerSystem';
 import headingEnemySystem from '../systems/headingEnemySystem';
 import ShootSystem from '../systems/ShootSystem';
+import animate2D from 'decs/Systems/animate2D';
 
 export default (decs, canvas, gl) => {
   const scene = decs.createScene();
@@ -44,6 +45,7 @@ export default (decs, canvas, gl) => {
   scene.addSystem(headingPlayerSystem);
   scene.addSystem(headingEnemySystem);
   scene.addSystem(ShootSystem);
+  scene.addSystem(animate2D);
 
   scene.executeOnDispose(inputHandler(scene, player, {
     w: 'moveUp',
