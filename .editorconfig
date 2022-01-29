@@ -1,5 +1,9 @@
 # EditorConfig is awesome: https://EditorConfig.org
 
+# Linux File endings
+[*]
+end_of_line = lf
+
 # Top-most EditorConfig file
 root = true
 
