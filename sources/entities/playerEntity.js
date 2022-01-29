@@ -19,6 +19,7 @@ export default (scene, position, rotation, scale) => {
     ],
     player: {},
     active: {},
+    heading: [0, 0],
   });
 
   return player;

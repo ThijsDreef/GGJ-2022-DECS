@@ -13,6 +13,8 @@ import mouseMoveHandler from '../systems/mouseMoveHandler';
 import crosshairMovementSystem from '../systems/crosshairMovementSystem';
 import crosshair from '../entities/crosshair';
 import aggroSystem from '../systems/aggroSystem';
+import headingPlayerSystem from '../systems/headingPlayerSystem';
+import headingEnemySystem from '../systems/headingEnemySystem';
 
 export default (decs, canvas, gl) => {
   const scene = decs.createScene();
@@ -37,6 +39,8 @@ export default (decs, canvas, gl) => {
   scene.addSystem(playerMovementSystem);
   scene.addSystem(crosshairMovementSystem);
   scene.addSystem(aggroSystem);
+  scene.addSystem(headingPlayerSystem);
+  scene.addSystem(headingEnemySystem);
 
   scene.executeOnDispose(inputHandler(scene, player, {
     w: 'moveUp',
