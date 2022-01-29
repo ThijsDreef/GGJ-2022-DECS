@@ -12,7 +12,7 @@ export default (scene, position, rotation, scale) => {
     mesh: scene.resources.geometry.getModel('sprite'),
     materials: [
       material('sprite', [
-        { name: 'textureMatrix', value: scene.resources.sprites.getSpriteTransformation('blue-enemy-idle1.png') },
+        { name: 'textureMatrix', value: scene.resources.sprites.getSpriteTransformation('crosshair.png') },
         { name: 'textureAtlas', value: scene.resources.texture.getTexture('assets') },
       ]),
     ],
