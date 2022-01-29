@@ -3,6 +3,8 @@ import Decs from 'decs';
 import spriteVert from 'Decs/WebGL/shaders/sprite.vert';
 import spriteFrag from 'Decs/webGL/shaders/batchSprite.frag';
 import batchSpriteVert from './shaders/batchedSprites.vert';
+import batchSpriteFrag from './shaders/batchedSprites.frag';
+
 import gameScene from './scenes/gameScene';
 
 const canvas = document.querySelector('.game-canvas');
@@ -18,7 +20,7 @@ const main = async () => {
   });
   decs.resources.shaders.createShader(
     `precision highp float;\n${batchSpriteVert}`,
-    `precision highp float;\n${spriteFrag}`,
+    `precision highp float;\n${batchSpriteFrag}`,
     'batchSprite',
     [
       { location: 0, name: 'position' },

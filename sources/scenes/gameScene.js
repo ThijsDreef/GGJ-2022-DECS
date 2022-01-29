@@ -7,39 +7,64 @@ import strawberry from '../entities/strawberry';
 import blueberry from '../entities/blueberry';
 import movementSystem from '../systems/movementSystem';
 import playerMovementSystem from '../systems/playerMovementSystem';
-import mouseClickHandler from '../systems/mouseClickHandler';
-import mouseMoveHandler from '../systems/mouseMoveHandler';
+import mouseClickHandler from '../onDispose/mouseClickHandler';
+import mouseMoveHandler from '../onDispose/mouseMoveHandler';
 import crosshairMovementSystem from '../systems/crosshairMovementSystem';
 import crosshair from '../entities/crosshair';
 import aggroSystem from '../systems/aggroSystem';
 import tileMap from '../entities/tileMap';
 import renderer2D from '../systems/renderer2D';
+import headingPlayerSystem from '../systems/headingPlayerSystem';
+import headingEnemySystem from '../systems/headingEnemySystem';
+import ShootSystem from '../systems/ShootSystem';
+import cameraFollowSystem from '../systems/cameraFollowSystem';
+
+const TILE_WIDTH = 32;
+const TILE_HEIGHT = 32;
+
+const mapToTile = (x, y, z) => [x * 32 + 16, y * 32 + 16, z];
+
+const generateMap = (width, height) => {
+  const data = [];
+  for (let x = 0; x < width; x += 1) {
+    for (let y = 0; y < height; y += 1) {
+      data.push({ sprite: 'background.png', collision: false });
+    }
+  }
+  return data;
+};
 
 export default (decs, canvas, gl) => {
   const scene = decs.createScene();
-  scene.addComponent(scene.createEntity(), {
-    camera: camera(),
+
+  tileMap(scene, mapToTile(0, 0, -3), {
+    map: generateMap(TILE_WIDTH, TILE_WIDTH),
+    width: TILE_WIDTH,
+    height: TILE_HEIGHT,
+  }, decs.resources.texture.getTexture('assets'), gl);
+
+  const player = playerEntity(scene, mapToTile(1, 1, -2), [0, 0, 0], [16, 16, 1]);
+  strawberry(scene, mapToTile(4, 4, -2), [0, 0, 0], [16, 16, 1]);
+  blueberry(scene, mapToTile(1, 4, -2), [0, 0, 0], [16, 16, 1]);
+  crosshair(scene, [0, 0, -1], [0, 0, 0], [12, 12, 1]);
+
+  scene.update(0);
+
+  scene.query(['position'], ({ position }, playerId) => {
+    scene.addComponent(scene.createEntity(), {
+      camera: camera(),
+      position: [0, 0, 0],
+      target: {
+        entity: playerId,
+        position,
+      },
+    });
   });
 
   scene.update(0);
   scene.executeOnDispose(resizeHandler(scene, canvas, gl));
 
-  const data = [
-    [{ sprite: 'background.png', collision: true }, { sprite: 'background.png', collision: true }, { sprite: 'background.png', collision: true }, { sprite: 'background.png', collision: true }, { sprite: 'background.png', collision: true }],
-    [{ sprite: 'background.png', collision: true }, { sprite: 'background.png', collision: false }, { sprite: 'background.png', collision: false }, { sprite: 'background.png', collision: false }, { sprite: 'background.png', collision: true }],
-    [{ sprite: 'background.png', collision: true }, { sprite: 'background.png', collision: false }, { sprite: 'background.png', collision: false }, { sprite: 'background.png', collision: false }, { sprite: 'background.png', collision: true }],
-    [{ sprite: 'background.png', collision: true }, { sprite: 'background.png', collision: false }, { sprite: 'background.png', collision: false }, { sprite: 'background.png', collision: false }, { sprite: 'background.png', collision: true }],
-    [{ sprite: 'background.png', collision: true }, { sprite: 'background.png', collision: false }, { sprite: 'background.png', collision: false }, { sprite: 'background.png', collision: false }, { sprite: 'background.png', collision: true }],
-    [{ sprite: 'background.png', collision: true }, { sprite: 'background.png', collision: false }, { sprite: 'background.png', collision: false }, { sprite: 'background.png', collision: false }, { sprite: 'background.png', collision: true }],
-
-  ];
-  tileMap(scene, [0, 0, -3], data, decs.resources.texture.getTexture('assets'), gl);
-
-  const player = playerEntity(scene, [0, 0, -2], [0, 0, 0], [16, 16, 1]);
-  strawberry(scene, [64, 10, -2], [0, 0, 0], [16, 16, 1]);
-  blueberry(scene, [-64, 0, -2], [0, 0, 0], [16, 16, 1]);
-  crosshair(scene, [0, 0, -1], [0, 0, 0], [12, 12, 1]);
-
+  scene.executeOnDispose(mouseClickHandler(scene, player, 'fire'));
   scene.executeOnDispose(mouseMoveHandler(scene, canvas));
   scene.executeOnDispose(mouseClickHandler(scene, player));
 
@@ -47,8 +72,12 @@ export default (decs, canvas, gl) => {
   scene.addSystem(calculateTransforms);
   scene.addSystem(movementSystem);
   scene.addSystem(playerMovementSystem);
+  scene.addSystem(cameraFollowSystem);
   scene.addSystem(crosshairMovementSystem);
   scene.addSystem(aggroSystem);
+  scene.addSystem(headingPlayerSystem);
+  scene.addSystem(headingEnemySystem);
+  scene.addSystem(ShootSystem);
 
   scene.executeOnDispose(inputHandler(scene, player, {
     w: 'moveUp',

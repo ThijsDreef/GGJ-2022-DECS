@@ -9,28 +9,29 @@ export default (scene, position, data, texture, gl) => {
   const mesh = new BatchedSprite(gl);
 
   let instances = 0;
-  for (let x = 0; x < data.length; x += 1) {
-    for (let y = 0; y < data[x].length; y += 1) {
-      instances += 1;
-      const tx = x - Math.floor(data.length / 2);
-      const ty = y - Math.floor(data[x].length / 2);
-      const model = [
-        TILE_SIZE / 2, 0, 0, 0,
-        0, TILE_SIZE / 2, 0, 0,
-        0, 0, 1, 0,
-        tx * TILE_SIZE + TILE_SIZE / 2, ty * TILE_SIZE + TILE_SIZE / 2, -1, 1,
-      ];
-      mesh.addSprite({
-        matrix: model,
-        frame: [...scene.resources.sprites.getSpriteTransformation(data[x][y].sprite)],
-      });
+  for (let x = 0; x < data.width; x += 1) {
+    for (let y = 0; y < data.height; y += 1) {
+      const tile = data.map[x + y * data.width];
+      if (tile.sprite) {
+        instances += 1;
+        const model = [
+          TILE_SIZE / 2, 0, 0, 0,
+          0, TILE_SIZE / 2, 0, 0,
+          0, 0, 1, 0,
+          x * TILE_SIZE + TILE_SIZE / 2, y * TILE_SIZE + TILE_SIZE / 2, -1, 1,
+        ];
+        mesh.addSprite({
+          matrix: model,
+          frame: [...scene.resources.sprites.getSpriteTransformation(tile.sprite)],
+        });
+      }
     }
   }
   mesh.ranges = [
     { start: 0, end: instances },
   ];
   mesh.compileBuffers();
-  const collisionData = data.map((item) => item.map((value) => (value ? 0 : 1)));
+  const collisionData = data.map.map((item) => item.collision);
 
   scene.addComponent(tileEntity, {
     tileCollision: collisionData,
