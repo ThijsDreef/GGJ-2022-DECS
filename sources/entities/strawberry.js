@@ -49,6 +49,7 @@ export default (scene, position, rotation, scale) => {
       cooldown: 0.6,
       timer: 0.0,
     },
+    enemy: {},
   };
   data.materials[0].uniforms[0].value = data.animation2D.matrix;
   scene.addComponent(strawberry, data);

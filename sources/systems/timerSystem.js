@@ -1,5 +1,5 @@
 export default (scene, dt) => {
-  scene.query(['timer'], (data) => {
-    data.timer += dt;
+  scene.query(['timeSinceStart'], (data) => {
+    data.timeSinceStart += dt;
   });
 };
