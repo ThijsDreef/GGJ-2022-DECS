@@ -1,105 +1,9 @@
 {
   "frames": {
-    "texture.png": {
-      "frame": {
-        "x": 1,
-        "y": 1,
-        "w": 1597,
-        "h": 1556
-      },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 1597,
-        "h": 1556
-      },
-      "sourceSize": {
-        "w": 1597,
-        "h": 1556
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
     "Blender1.png": {
       "frame": {
         "x": 1,
-        "y": 1559,
-        "w": 256,
-        "h": 256
-      },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 256,
-        "h": 256
-      },
-      "sourceSize": {
-        "w": 256,
-        "h": 256
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Blender3.png": {
-      "frame": {
-        "x": 259,
-        "y": 1559,
-        "w": 256,
-        "h": 256
-      },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 256,
-        "h": 256
-      },
-      "sourceSize": {
-        "w": 256,
-        "h": 256
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Blender4.png": {
-      "frame": {
-        "x": 517,
-        "y": 1559,
-        "w": 256,
-        "h": 256
-      },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 256,
-        "h": 256
-      },
-      "sourceSize": {
-        "w": 256,
-        "h": 256
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Blender5.png": {
-      "frame": {
-        "x": 775,
-        "y": 1559,
+        "y": 1,
         "w": 256,
         "h": 256
       },
@@ -122,8 +26,8 @@
     },
     "Blender2.png": {
       "frame": {
-        "x": 1033,
-        "y": 1559,
+        "x": 1,
+        "y": 259,
         "w": 256,
         "h": 256
       },
@@ -144,24 +48,96 @@
         "y": 0.5
       }
     },
-    "background.png": {
+    "Blender3.png": {
       "frame": {
-        "x": 1291,
-        "y": 1559,
-        "w": 170,
-        "h": 170
+        "x": 1,
+        "y": 517,
+        "w": 256,
+        "h": 256
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 170,
-        "h": 170
+        "w": 256,
+        "h": 256
       },
       "sourceSize": {
-        "w": 170,
-        "h": 170
+        "w": 256,
+        "h": 256
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Blender4.png": {
+      "frame": {
+        "x": 1,
+        "y": 775,
+        "w": 256,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 256,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 256,
+        "h": 256
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Blender5.png": {
+      "frame": {
+        "x": 1,
+        "y": 1033,
+        "w": 256,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 256,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 256,
+        "h": 256
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "StrawBerryHD1.png": {
+      "frame": {
+        "x": 1,
+        "y": 1291,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
       },
       "pivot": {
         "x": 0.5,
@@ -170,8 +146,8 @@
     },
     "StrawBerryHD2.png": {
       "frame": {
-        "x": 1463,
-        "y": 1559,
+        "x": 1,
+        "y": 1421,
         "w": 128,
         "h": 128
       },
@@ -194,8 +170,8 @@
     },
     "StrawBerryHD3.png": {
       "frame": {
-        "x": 1600,
-        "y": 1,
+        "x": 1,
+        "y": 1551,
         "w": 128,
         "h": 128
       },
@@ -218,104 +194,8 @@
     },
     "StrawBerryHD4.png": {
       "frame": {
-        "x": 1600,
-        "y": 131,
-        "w": 128,
-        "h": 128
-      },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 128,
-        "h": 128
-      },
-      "sourceSize": {
-        "w": 128,
-        "h": 128
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "blueBerryHD3.png": {
-      "frame": {
-        "x": 1600,
-        "y": 261,
-        "w": 128,
-        "h": 128
-      },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 128,
-        "h": 128
-      },
-      "sourceSize": {
-        "w": 128,
-        "h": 128
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "blueBerryHD4.png": {
-      "frame": {
-        "x": 1600,
-        "y": 391,
-        "w": 128,
-        "h": 128
-      },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 128,
-        "h": 128
-      },
-      "sourceSize": {
-        "w": 128,
-        "h": 128
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "StrawBerryHD1.png": {
-      "frame": {
-        "x": 1600,
-        "y": 521,
-        "w": 128,
-        "h": 128
-      },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 128,
-        "h": 128
-      },
-      "sourceSize": {
-        "w": 128,
-        "h": 128
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "blueBerryHD2.png": {
-      "frame": {
-        "x": 1600,
-        "y": 651,
+        "x": 1,
+        "y": 1681,
         "w": 128,
         "h": 128
       },
@@ -338,8 +218,8 @@
     },
     "blueBerryHD1.png": {
       "frame": {
-        "x": 1600,
-        "y": 781,
+        "x": 1,
+        "y": 1811,
         "w": 128,
         "h": 128
       },
@@ -360,82 +240,10 @@
         "y": 0.5
       }
     },
-    "tiles3.png": {
+    "background.png": {
       "frame": {
-        "x": 1291,
-        "y": 1731,
-        "w": 32,
-        "h": 32
-      },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 32,
-        "h": 32
-      },
-      "sourceSize": {
-        "w": 32,
-        "h": 32
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "blue-enemy-idle3.png": {
-      "frame": {
-        "x": 1291,
-        "y": 1765,
-        "w": 32,
-        "h": 32
-      },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 32,
-        "h": 32
-      },
-      "sourceSize": {
-        "w": 32,
-        "h": 32
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "blue-enemy-idle1.png": {
-      "frame": {
-        "x": 1325,
-        "y": 1731,
-        "w": 32,
-        "h": 32
-      },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 32,
-        "h": 32
-      },
-      "sourceSize": {
-        "w": 32,
-        "h": 32
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "background2.png": {
-      "frame": {
-        "x": 1325,
-        "y": 1765,
+        "x": 1,
+        "y": 1941,
         "w": 32,
         "h": 32
       },
@@ -458,8 +266,8 @@
     },
     "crosshair.png": {
       "frame": {
-        "x": 1359,
-        "y": 1731,
+        "x": 1,
+        "y": 1975,
         "w": 32,
         "h": 32
       },
@@ -480,82 +288,10 @@
         "y": 0.5
       }
     },
-    "red-enemy-idle1.png": {
+    "tiles1.png": {
       "frame": {
-        "x": 1359,
-        "y": 1765,
-        "w": 32,
-        "h": 32
-      },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 32,
-        "h": 32
-      },
-      "sourceSize": {
-        "w": 32,
-        "h": 32
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "red-enemy-idle2.png": {
-      "frame": {
-        "x": 1393,
-        "y": 1731,
-        "w": 32,
-        "h": 32
-      },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 32,
-        "h": 32
-      },
-      "sourceSize": {
-        "w": 32,
-        "h": 32
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "red-enemy-idle3.png": {
-      "frame": {
-        "x": 1393,
-        "y": 1765,
-        "w": 32,
-        "h": 32
-      },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 32,
-        "h": 32
-      },
-      "sourceSize": {
-        "w": 32,
-        "h": 32
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "walkcycle-player2.png": {
-      "frame": {
-        "x": 1427,
-        "y": 1731,
+        "x": 1,
+        "y": 2009,
         "w": 32,
         "h": 32
       },
@@ -578,8 +314,8 @@
     },
     "tiles2.png": {
       "frame": {
-        "x": 1427,
-        "y": 1765,
+        "x": 35,
+        "y": 1941,
         "w": 32,
         "h": 32
       },
@@ -600,10 +336,10 @@
         "y": 0.5
       }
     },
-    "blue-enemy-idle2.png": {
+    "tiles3.png": {
       "frame": {
-        "x": 1461,
-        "y": 1731,
+        "x": 35,
+        "y": 1975,
         "w": 32,
         "h": 32
       },
@@ -626,8 +362,8 @@
     },
     "tiles4.png": {
       "frame": {
-        "x": 1463,
-        "y": 1689,
+        "x": 35,
+        "y": 2009,
         "w": 32,
         "h": 32
       },
@@ -650,8 +386,8 @@
     },
     "tiles5.png": {
       "frame": {
-        "x": 1461,
-        "y": 1765,
+        "x": 69,
+        "y": 1941,
         "w": 32,
         "h": 32
       },
@@ -674,8 +410,8 @@
     },
     "tiles6.png": {
       "frame": {
-        "x": 1495,
-        "y": 1723,
+        "x": 69,
+        "y": 1975,
         "w": 32,
         "h": 32
       },
@@ -698,8 +434,8 @@
     },
     "tiles7.png": {
       "frame": {
-        "x": 1497,
-        "y": 1689,
+        "x": 69,
+        "y": 2009,
         "w": 32,
         "h": 32
       },
@@ -722,8 +458,8 @@
     },
     "tiles8.png": {
       "frame": {
-        "x": 1495,
-        "y": 1757,
+        "x": 103,
+        "y": 1941,
         "w": 32,
         "h": 32
       },
@@ -746,56 +482,8 @@
     },
     "tiles9.png": {
       "frame": {
-        "x": 1529,
-        "y": 1723,
-        "w": 32,
-        "h": 32
-      },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 32,
-        "h": 32
-      },
-      "sourceSize": {
-        "w": 32,
-        "h": 32
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "walkcycle-player1.png": {
-      "frame": {
-        "x": 1531,
-        "y": 1689,
-        "w": 32,
-        "h": 32
-      },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 32,
-        "h": 32
-      },
-      "sourceSize": {
-        "w": 32,
-        "h": 32
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "walkcycle-player3.png": {
-      "frame": {
-        "x": 1529,
-        "y": 1757,
+        "x": 103,
+        "y": 1975,
         "w": 32,
         "h": 32
       },
@@ -818,8 +506,8 @@
     },
     "Bullet1.png": {
       "frame": {
-        "x": 1291,
-        "y": 1799,
+        "x": 103,
+        "y": 2009,
         "w": 15,
         "h": 15
       },
@@ -840,48 +528,72 @@
         "y": 0.5
       }
     },
-    "background1.png": {
+    "blueBerryHD2.png": {
       "frame": {
-        "x": 1291,
-        "y": 1559,
-        "w": 170,
-        "h": 170
+        "x": 131,
+        "y": 1291,
+        "w": 128,
+        "h": 128
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 170,
-        "h": 170
+        "w": 128,
+        "h": 128
       },
       "sourceSize": {
-        "w": 170,
-        "h": 170
+        "w": 128,
+        "h": 128
       },
       "pivot": {
         "x": 0.5,
         "y": 0.5
       }
     },
-    "tiles1.png": {
+    "blueBerryHD3.png": {
       "frame": {
-        "x": 1325,
-        "y": 1765,
-        "w": 32,
-        "h": 32
+        "x": 131,
+        "y": 1421,
+        "w": 128,
+        "h": 128
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 32,
-        "h": 32
+        "w": 128,
+        "h": 128
       },
       "sourceSize": {
-        "w": 32,
-        "h": 32
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "blueBerryHD4.png": {
+      "frame": {
+        "x": 131,
+        "y": 1551,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
       },
       "pivot": {
         "x": 0.5,
@@ -895,8 +607,8 @@
     "image": "texture.png",
     "format": "RGBA8888",
     "size": {
-      "w": 1729,
-      "h": 1816
+      "w": 260,
+      "h": 2042
     },
     "scale": 1
   }
