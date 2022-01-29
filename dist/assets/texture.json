@@ -1,9 +1,129 @@
 {
   "frames": {
-    "StrawBerryHD1.png": {
+    "Blender1.png": {
       "frame": {
         "x": 1,
         "y": 1,
+        "w": 256,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 256,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 256,
+        "h": 256
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Blender2.png": {
+      "frame": {
+        "x": 1,
+        "y": 259,
+        "w": 256,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 256,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 256,
+        "h": 256
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Blender3.png": {
+      "frame": {
+        "x": 1,
+        "y": 517,
+        "w": 256,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 256,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 256,
+        "h": 256
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Blender4.png": {
+      "frame": {
+        "x": 1,
+        "y": 775,
+        "w": 256,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 256,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 256,
+        "h": 256
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Blender5.png": {
+      "frame": {
+        "x": 1,
+        "y": 1033,
+        "w": 256,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 256,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 256,
+        "h": 256
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "StrawBerryHD1.png": {
+      "frame": {
+        "x": 1,
+        "y": 1291,
         "w": 128,
         "h": 128
       },
@@ -27,7 +147,7 @@
     "StrawBerryHD2.png": {
       "frame": {
         "x": 1,
-        "y": 131,
+        "y": 1421,
         "w": 128,
         "h": 128
       },
@@ -51,7 +171,7 @@
     "StrawBerryHD3.png": {
       "frame": {
         "x": 1,
-        "y": 261,
+        "y": 1551,
         "w": 128,
         "h": 128
       },
@@ -75,7 +195,7 @@
     "StrawBerryHD4.png": {
       "frame": {
         "x": 1,
-        "y": 391,
+        "y": 1681,
         "w": 128,
         "h": 128
       },
@@ -99,79 +219,7 @@
     "blueBerryHD1.png": {
       "frame": {
         "x": 1,
-        "y": 521,
-        "w": 128,
-        "h": 128
-      },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 128,
-        "h": 128
-      },
-      "sourceSize": {
-        "w": 128,
-        "h": 128
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "blueBerryHD2.png": {
-      "frame": {
-        "x": 1,
-        "y": 651,
-        "w": 128,
-        "h": 128
-      },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 128,
-        "h": 128
-      },
-      "sourceSize": {
-        "w": 128,
-        "h": 128
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "blueBerryHD3.png": {
-      "frame": {
-        "x": 1,
-        "y": 781,
-        "w": 128,
-        "h": 128
-      },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 128,
-        "h": 128
-      },
-      "sourceSize": {
-        "w": 128,
-        "h": 128
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "blueBerryHD4.png": {
-      "frame": {
-        "x": 1,
-        "y": 911,
+        "y": 1811,
         "w": 128,
         "h": 128
       },
@@ -195,7 +243,7 @@
     "blue-enemy-idle1.png": {
       "frame": {
         "x": 1,
-        "y": 1041,
+        "y": 1941,
         "w": 32,
         "h": 32
       },
@@ -219,7 +267,7 @@
     "blue-enemy-idle2.png": {
       "frame": {
         "x": 1,
-        "y": 1075,
+        "y": 1975,
         "w": 32,
         "h": 32
       },
@@ -243,7 +291,7 @@
     "blue-enemy-idle3.png": {
       "frame": {
         "x": 1,
-        "y": 1109,
+        "y": 2009,
         "w": 32,
         "h": 32
       },
@@ -266,8 +314,8 @@
     },
     "red-enemy-idle1.png": {
       "frame": {
-        "x": 1,
-        "y": 1143,
+        "x": 35,
+        "y": 1941,
         "w": 32,
         "h": 32
       },
@@ -290,8 +338,8 @@
     },
     "red-enemy-idle2.png": {
       "frame": {
-        "x": 1,
-        "y": 1177,
+        "x": 35,
+        "y": 1975,
         "w": 32,
         "h": 32
       },
@@ -314,8 +362,8 @@
     },
     "red-enemy-idle3.png": {
       "frame": {
-        "x": 1,
-        "y": 1211,
+        "x": 35,
+        "y": 2009,
         "w": 32,
         "h": 32
       },
@@ -338,8 +386,8 @@
     },
     "walkcycle-player1.png": {
       "frame": {
-        "x": 1,
-        "y": 1245,
+        "x": 69,
+        "y": 1941,
         "w": 32,
         "h": 32
       },
@@ -362,8 +410,8 @@
     },
     "walkcycle-player2.png": {
       "frame": {
-        "x": 1,
-        "y": 1279,
+        "x": 69,
+        "y": 1975,
         "w": 32,
         "h": 32
       },
@@ -386,8 +434,8 @@
     },
     "walkcycle-player3.png": {
       "frame": {
-        "x": 1,
-        "y": 1313,
+        "x": 69,
+        "y": 2009,
         "w": 32,
         "h": 32
       },
@@ -410,8 +458,8 @@
     },
     "Bullet1.png": {
       "frame": {
-        "x": 1,
-        "y": 1347,
+        "x": 103,
+        "y": 1941,
         "w": 15,
         "h": 15
       },
@@ -431,6 +479,78 @@
         "x": 0.5,
         "y": 0.5
       }
+    },
+    "blueBerryHD2.png": {
+      "frame": {
+        "x": 131,
+        "y": 1291,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "blueBerryHD3.png": {
+      "frame": {
+        "x": 131,
+        "y": 1421,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "blueBerryHD4.png": {
+      "frame": {
+        "x": 131,
+        "y": 1551,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
     }
   },
   "meta": {
@@ -439,8 +559,8 @@
     "image": "texture.png",
     "format": "RGBA8888",
     "size": {
-      "w": 130,
-      "h": 1363
+      "w": 260,
+      "h": 2042
     },
     "scale": 1
   }
