@@ -22,6 +22,7 @@ import cameraFollowSystem from '../systems/cameraFollowSystem';
 import playerBulletCollisionSystem from '../systems/collisionSystems/playerBulletCollisionSystem';
 import enemyBulletCollisionSystem from '../systems/collisionSystems/enemyBulletCollisionSystem';
 import playerTileCollisionSystem from '../systems/collisionSystems/playerTileCollisionSystem';
+import healthSystem from '../systems/healthSystem';
 
 const TILE_WIDTH = 32;
 const TILE_HEIGHT = 32;
@@ -32,18 +33,28 @@ const generateMap = (width, height) => {
   const data = [];
   for (let x = 0; x < width; x += 1) {
     for (let y = 0; y < height; y += 1) {
-      data.push({ sprite: 'background1.png', collision: false });
+      data.push({ sprite: 'background.png', collision: false });
     }
   }
   for (let x = 0; x < width; x += 1) {
     data[x].collision = true;
-    data[x].sprite = 'background2.png';
-    data[x + (height - 1) * height].collision = true;
+    data[x].sprite = 'tiles1.png';
+    data[x + (height - 2) * height].collision = true;
+    data[x + (height - 1) * height].sprite = 'tiles2.png';
+    data[x + (height - 2) * height].sprite = 'tiles9.png';
   }
   for (let y = 0; y < height; y += 1) {
     data[y * width].collision = true;
+    data[y * width].sprite = 'tiles7.png';
+
     data[(width - 1) + y * height].collision = true;
+    data[(width - 1) + y * height].sprite = 'tiles8.png';
   }
+  data[0].sprite = 'tiles3.png';
+  data[(width - 1) + (height - 1) * height].sprite = 'tiles5.png';
+  data[(width - 1)].sprite = 'tiles4.png';
+  data[(height - 1) * height].sprite = 'tiles6.png';
+
   return data;
 };
 
@@ -56,7 +67,7 @@ export default (decs, canvas, gl) => {
     height: TILE_HEIGHT,
   }, decs.resources.texture.getTexture('assets'), gl);
 
-  const player = playerEntity(scene, mapToTile(16, 16, -2), [0, 0, 0], [16, 16, 1]);
+  const player = playerEntity(scene, mapToTile(16, 16, -2), [0, 0, 0], [64, 64, 1]);
   strawberry(scene, mapToTile(28, 28, -2), [0, 0, 0], [16, 16, 1]);
   blueberry(scene, mapToTile(1, 4, -2), [0, 0, 0], [16, 16, 1]);
   crosshair(scene, [0, 0, -1], [0, 0, 0], [12, 12, 1]);
@@ -87,7 +98,7 @@ export default (decs, canvas, gl) => {
   scene.addSystem(calculateTransforms);
   scene.addSystem(movementSystem);
   scene.addSystem(playerMovementSystem);
-  
+
   scene.addSystem(playerTileCollisionSystem);
   scene.addSystem(cameraFollowSystem);
   scene.addSystem(crosshairMovementSystem);
@@ -98,6 +109,7 @@ export default (decs, canvas, gl) => {
   scene.addSystem(playerBulletCollisionSystem);
   scene.addSystem(enemyBulletCollisionSystem);
   scene.addSystem(animate2D);
+  scene.addSystem(healthSystem);
 
   scene.executeOnDispose(inputHandler(scene, input, {
     w: 'moveUp',
