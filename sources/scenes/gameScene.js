@@ -18,6 +18,7 @@ import headingEnemySystem from '../systems/headingEnemySystem';
 import shootSystem from '../systems/shootSystem';
 import playerBulletCollisionSystem from '../systems/collisionSystems/playerBulletCollisionSystem';
 import enemyBulletCollisionSystem from '../systems/collisionSystems/enemyBulletCollisionSystem';
+import healthSystem from '../systems/healthSystem';
 
 export default (decs, canvas, gl) => {
   const scene = decs.createScene();
@@ -50,6 +51,7 @@ export default (decs, canvas, gl) => {
   scene.addSystem(shootSystem);
   scene.addSystem(playerBulletCollisionSystem);
   scene.addSystem(enemyBulletCollisionSystem);
+  scene.addSystem(healthSystem);
 
   scene.executeOnDispose(inputHandler(scene, input, {
     w: 'moveUp',

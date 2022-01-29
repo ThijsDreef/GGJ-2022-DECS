@@ -18,6 +18,7 @@ const defaultShoot = (scene, position, direction) => {
       ]),
     ],
     enemyBullet: {},
+    damage: 25,
   });
 };
 
@@ -46,6 +47,7 @@ export default (scene, position, rotation, scale) => {
     },
     heading: [0, 0],
     strawberry: {},
+    health: 50,
     gun: {
       shoot: defaultShoot,
       cooldown: 0.3,
