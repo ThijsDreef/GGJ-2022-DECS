@@ -1,9 +1,225 @@
 {
   "frames": {
-    "background.png": {
+    "background1.png": {
       "frame": {
         "x": 1,
         "y": 1,
+        "w": 170,
+        "h": 170
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 170,
+        "h": 170
+      },
+      "sourceSize": {
+        "w": 170,
+        "h": 170
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "StrawBerryHD1.png": {
+      "frame": {
+        "x": 1,
+        "y": 173,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "StrawBerryHD2.png": {
+      "frame": {
+        "x": 1,
+        "y": 303,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "StrawBerryHD3.png": {
+      "frame": {
+        "x": 1,
+        "y": 433,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "StrawBerryHD4.png": {
+      "frame": {
+        "x": 1,
+        "y": 563,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "blueBerryHD1.png": {
+      "frame": {
+        "x": 1,
+        "y": 693,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "blueBerryHD2.png": {
+      "frame": {
+        "x": 1,
+        "y": 823,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "blueBerryHD3.png": {
+      "frame": {
+        "x": 1,
+        "y": 953,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "blueBerryHD4.png": {
+      "frame": {
+        "x": 1,
+        "y": 1083,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "background2.png": {
+      "frame": {
+        "x": 1,
+        "y": 1213,
         "w": 32,
         "h": 32
       },
@@ -27,7 +243,7 @@
     "blue-enemy-idle1.png": {
       "frame": {
         "x": 1,
-        "y": 35,
+        "y": 1247,
         "w": 32,
         "h": 32
       },
@@ -51,7 +267,7 @@
     "blue-enemy-idle2.png": {
       "frame": {
         "x": 1,
-        "y": 69,
+        "y": 1281,
         "w": 32,
         "h": 32
       },
@@ -75,7 +291,7 @@
     "blue-enemy-idle3.png": {
       "frame": {
         "x": 1,
-        "y": 103,
+        "y": 1315,
         "w": 32,
         "h": 32
       },
@@ -99,7 +315,7 @@
     "crosshair.png": {
       "frame": {
         "x": 1,
-        "y": 137,
+        "y": 1349,
         "w": 32,
         "h": 32
       },
@@ -123,7 +339,7 @@
     "red-enemy-idle1.png": {
       "frame": {
         "x": 1,
-        "y": 171,
+        "y": 1383,
         "w": 32,
         "h": 32
       },
@@ -147,7 +363,7 @@
     "red-enemy-idle2.png": {
       "frame": {
         "x": 1,
-        "y": 205,
+        "y": 1417,
         "w": 32,
         "h": 32
       },
@@ -171,7 +387,7 @@
     "red-enemy-idle3.png": {
       "frame": {
         "x": 1,
-        "y": 239,
+        "y": 1451,
         "w": 32,
         "h": 32
       },
@@ -195,7 +411,7 @@
     "walkcycle-player1.png": {
       "frame": {
         "x": 1,
-        "y": 273,
+        "y": 1485,
         "w": 32,
         "h": 32
       },
@@ -219,7 +435,7 @@
     "walkcycle-player2.png": {
       "frame": {
         "x": 1,
-        "y": 307,
+        "y": 1519,
         "w": 32,
         "h": 32
       },
@@ -243,7 +459,7 @@
     "walkcycle-player3.png": {
       "frame": {
         "x": 1,
-        "y": 341,
+        "y": 1553,
         "w": 32,
         "h": 32
       },
@@ -267,7 +483,7 @@
     "Bullet1.png": {
       "frame": {
         "x": 1,
-        "y": 375,
+        "y": 1587,
         "w": 15,
         "h": 15
       },
@@ -295,8 +511,8 @@
     "image": "texture.png",
     "format": "RGBA8888",
     "size": {
-      "w": 34,
-      "h": 391
+      "w": 172,
+      "h": 1603
     },
     "scale": 1
   }

@@ -32,9 +32,12 @@ export default (scene, position, data, texture, gl) => {
   ];
   mesh.compileBuffers();
   const collisionData = data.map.map((item) => item.collision);
-
   scene.addComponent(tileEntity, {
-    tileCollision: collisionData,
+    tileCollision: {
+      width: data.width,
+      height: data.height,
+      collisionData,
+    },
     position,
     scale: [1, 1, 1],
     rotation: [0, 0, 0],

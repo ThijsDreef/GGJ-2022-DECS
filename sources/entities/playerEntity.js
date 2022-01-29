@@ -1,22 +1,13 @@
 import transform from 'decs/Components/transform';
 import material from 'decs/Components/material';
+import defaultEntity from './defaultEntity';
 
 const defaultShoot = (scene, position, direction) => {
   const bullet = scene.createEntity();
   scene.addComponent(bullet, {
-    position: [...position],
-    rotation: [0, 0, 0],
-    scale: [6, 6],
+    ...defaultEntity(scene, [...position], [6, 6], 'Bullet1.png'),
     active: {},
     acceleration: [...direction].map((item) => item * 1000),
-    transform: transform(),
-    mesh: scene.resources.geometry.getModel('sprite'),
-    materials: [
-      material('sprite', [
-        { name: 'textureMatrix', value: scene.resources.sprites.getSpriteTransformation('Bullet1.png') },
-        { name: 'textureAtlas', value: scene.resources.texture.getTexture('assets') },
-      ]),
-    ],
     playerBullet: {},
   });
 };
@@ -39,7 +30,7 @@ export default (scene, position, rotation, scale) => {
     ],
     gun: {
       shoot: defaultShoot,
-      cooldown: 0.1,
+      cooldown: 0.5,
       timer: 0.0,
     },
     player: {},

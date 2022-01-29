@@ -1,6 +1,7 @@
 import camera from 'decs/Components/camera';
 import calculateTransforms from 'decs/systems/calculateTransforms';
 import inputHandler from 'decs/Utils/inputHandler';
+import animate2D from 'decs/Systems/animate2D';
 import resizeHandler from '../onDispose/resizeHandler';
 import playerEntity from '../entities/playerEntity';
 import strawberry from '../entities/strawberry';
@@ -9,6 +10,7 @@ import movementSystem from '../systems/movementSystem';
 import playerMovementSystem from '../systems/playerMovementSystem';
 import mouseClickHandler from '../onDispose/mouseClickHandler';
 import mouseMoveHandler from '../onDispose/mouseMoveHandler';
+import shootSystem from '../systems/shootSystem';
 import crosshairMovementSystem from '../systems/crosshairMovementSystem';
 import crosshair from '../entities/crosshair';
 import aggroSystem from '../systems/aggroSystem';
@@ -17,21 +19,30 @@ import renderer2D from '../systems/renderer2D';
 import headingPlayerSystem from '../systems/headingPlayerSystem';
 import headingEnemySystem from '../systems/headingEnemySystem';
 import cameraFollowSystem from '../systems/cameraFollowSystem';
-import shootSystem from '../systems/shootSystem';
 import playerBulletCollisionSystem from '../systems/collisionSystems/playerBulletCollisionSystem';
 import enemyBulletCollisionSystem from '../systems/collisionSystems/enemyBulletCollisionSystem';
+import playerTileCollisionSystem from '../systems/collisionSystems/playerTileCollisionSystem';
 
 const TILE_WIDTH = 32;
 const TILE_HEIGHT = 32;
 
-const mapToTile = (x, y, z) => [x * 32 + 16, y * 32 + 16, z];
+const mapToTile = (x, y, z) => [x * 32, y * 32, z];
 
 const generateMap = (width, height) => {
   const data = [];
   for (let x = 0; x < width; x += 1) {
     for (let y = 0; y < height; y += 1) {
-      data.push({ sprite: 'background.png', collision: false });
+      data.push({ sprite: 'background1.png', collision: false });
     }
+  }
+  for (let x = 0; x < width; x += 1) {
+    data[x].collision = true;
+    data[x].sprite = 'background2.png';
+    data[x + (height - 1) * height].collision = true;
+  }
+  for (let y = 0; y < height; y += 1) {
+    data[y * width].collision = true;
+    data[(width - 1) + y * height].collision = true;
   }
   return data;
 };
@@ -45,7 +56,7 @@ export default (decs, canvas, gl) => {
     height: TILE_HEIGHT,
   }, decs.resources.texture.getTexture('assets'), gl);
 
-  const player = playerEntity(scene, mapToTile(1, 1, -2), [0, 0, 0], [16, 16, 1]);
+  const player = playerEntity(scene, mapToTile(16, 16, -2), [0, 0, 0], [16, 16, 1]);
   strawberry(scene, mapToTile(28, 28, -2), [0, 0, 0], [16, 16, 1]);
   blueberry(scene, mapToTile(1, 4, -2), [0, 0, 0], [16, 16, 1]);
   crosshair(scene, [0, 0, -1], [0, 0, 0], [12, 12, 1]);
@@ -76,6 +87,8 @@ export default (decs, canvas, gl) => {
   scene.addSystem(calculateTransforms);
   scene.addSystem(movementSystem);
   scene.addSystem(playerMovementSystem);
+  
+  scene.addSystem(playerTileCollisionSystem);
   scene.addSystem(cameraFollowSystem);
   scene.addSystem(crosshairMovementSystem);
   scene.addSystem(aggroSystem);
@@ -84,6 +97,7 @@ export default (decs, canvas, gl) => {
   scene.addSystem(shootSystem);
   scene.addSystem(playerBulletCollisionSystem);
   scene.addSystem(enemyBulletCollisionSystem);
+  scene.addSystem(animate2D);
 
   scene.executeOnDispose(inputHandler(scene, input, {
     w: 'moveUp',
