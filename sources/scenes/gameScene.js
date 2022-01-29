@@ -35,6 +35,8 @@ export default (decs, canvas, gl) => {
   const player = playerEntity(scene, [0, 0, -1], [0, 0, 0], [35, 35, 1]);
   strawberry(scene, [64, 350, -1], [0, 0, 0], [16, 16, 1]);
   blueberry(scene, [300, 0, -1], [0, 0, 0], [16, 16, 1]);
+  blueberry(scene, [350, 50, -1], [0, 0, 0], [16, 16, 1]);
+  blueberry(scene, [350, -50, -1], [0, 0, 0], [16, 16, 1]);
   crosshair(scene, [0, 0, -1], [0, 0, 0], [16, 16, 1]);
 
   scene.executeOnDispose(mouseClickHandler(scene, player, 'fire'));

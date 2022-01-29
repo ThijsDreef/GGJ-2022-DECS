@@ -1,13 +1,13 @@
 import transform from 'decs/Components/transform';
 import material from 'decs/Components/material';
 import animation2D from 'decs/Components/animation2D';
-import defaultShoot from '../components/shots/defaultShoot';
+import sniperShoot from '../components/shots/sniperShoot';
 
 const strawberryProxy = (
   scene,
   position,
   direction,
-) => defaultShoot(scene, position, direction, false, 10);
+) => sniperShoot(scene, position, direction, false, 10);
 
 export default (scene, position, rotation, scale) => {
   const strawberry = scene.createEntity();
@@ -35,7 +35,7 @@ export default (scene, position, rotation, scale) => {
     active: {},
 
     aggro: {
-      distance: 32 * 10,
+      distance: 32 * 14,
       target: ['player'],
       onAggro: {
         fire: {},
@@ -46,7 +46,7 @@ export default (scene, position, rotation, scale) => {
     health: 50,
     gun: {
       shoot: strawberryProxy,
-      cooldown: 0.3,
+      cooldown: 0.6,
       timer: 0.0,
     },
   };
