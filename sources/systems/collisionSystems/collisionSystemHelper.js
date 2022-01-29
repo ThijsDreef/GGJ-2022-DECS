@@ -12,7 +12,7 @@ export default (scene, entitySpecifierOne, entitySpecifierTwo, collisionCallback
         collision &= distance <= Math.abs(innerEntityScale[i]) + Math.abs(outerEntityScale[i]);
       }
       if (collision) {
-        collisionCallback({id: outerEntityId, data: outerEntityData}, {id: innerEntityId, data: innerEntityId});
+        collisionCallback({id: outerEntityId, data: outerEntityData}, {id: innerEntityId, data: innerEntityData});
       }
     }, ['active', ...entitySpecifierTwo]);
   }, ['active', ...entitySpecifierOne]);
