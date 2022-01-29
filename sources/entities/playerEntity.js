@@ -17,7 +17,7 @@ const defaultShoot = (scene, position, direction) => {
         { name: 'textureAtlas', value: scene.resources.texture.getTexture('assets') },
       ]),
     ],
-
+    playerBullet: {},
   });
 };
 

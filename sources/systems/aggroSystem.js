@@ -8,7 +8,7 @@ export default (scene) => {
         distToTarget = Math.sqrt((x * x) + (y * y));
       }, ['active', ...aggro.target]);
 
-      if (distToTarget > aggro.distance) {
+      if (distToTarget > aggro.distance || !scene.entities[target.entity]) {
         scene.removeComponent(id, ['target', ...Object.keys(aggro.onAggro)]);
       }
     } else {
