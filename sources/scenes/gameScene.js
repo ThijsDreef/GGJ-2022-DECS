@@ -24,11 +24,11 @@ import enemyBulletCollisionSystem from '../systems/collisionSystems/enemyBulletC
 import playerTileCollisionSystem from '../systems/collisionSystems/playerTileCollisionSystem';
 import healthSystem from '../systems/healthSystem';
 import timerSystem from '../systems/timerSystem';
+import spawnSystem from '../systems/spawnSystem';
+import mapToTile from '../utils/mapToTile';
 
 const TILE_WIDTH = 32;
 const TILE_HEIGHT = 32;
-
-const mapToTile = (x, y, z) => [x * 32, y * 32, z];
 
 const generateMap = (width, height) => {
   const data = [];
@@ -69,8 +69,6 @@ export default (decs, canvas, gl) => {
   }, decs.resources.texture.getTexture('assets'), gl);
 
   const player = playerEntity(scene, mapToTile(16, 16, -2), [0, 0, 0], [48, 48, 1]);
-  strawberry(scene, mapToTile(28, 28, -2), [0, 0, 0], [16, 16, 1]);
-  blueberry(scene, mapToTile(1, 4, -2), [0, 0, 0], [16, 16, 1]);
   crosshair(scene, [0, 0, -1], [0, 0, 0], [12, 12, 1]);
 
   scene.update(0);
@@ -89,7 +87,7 @@ export default (decs, canvas, gl) => {
   scene.addComponent(input, { input: {} });
 
   const timer = scene.createEntity();
-  scene.addComponent(timer, { timer: 0 });
+  scene.addComponent(timer, { timeSinceStart: 0 });
 
   scene.update(0);
   scene.executeOnDispose(resizeHandler(scene, canvas, gl));
@@ -114,6 +112,7 @@ export default (decs, canvas, gl) => {
   scene.addSystem(animate2D);
   scene.addSystem(healthSystem);
   scene.addSystem(timerSystem);
+  scene.addSystem(spawnSystem);
 
   scene.executeOnDispose(inputHandler(scene, input, {
     w: 'moveUp',

@@ -52,10 +52,11 @@ export default (scene, position, rotation, scale) => {
     health: 50,
     gun: {
       shoot: blueberryProxy,
-      cooldown: 0.3,
+      cooldown: 0.5,
       timer: 0.0,
     },
     blueberry: {},
+    enemy: {},
   };
 
   data.materials[0].uniforms[0].value = data.animation2D.matrix;

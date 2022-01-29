@@ -1,7 +1,7 @@
 import defaultEntity from '../../entities/defaultEntity';
 
 export default (scene, position, direction, isPlayerBullet, damage) => {
-  const numberOfBullets = 10;
+  const numberOfBullets = 3;
   for (let i = 0; i < numberOfBullets; i += 1) {
     const bullet = scene.createEntity();
     scene.addComponent(bullet, {
