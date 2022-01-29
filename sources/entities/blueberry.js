@@ -3,7 +3,7 @@ import material from 'decs/Components/material';
 import animation2D from 'decs/Components/animation2D';
 
 export default (scene, position, rotation, scale) => {
-  const strawberry = scene.createEntity();
+  const blueberry = scene.createEntity();
   const data = {
     position,
     rotation,
@@ -38,5 +38,5 @@ export default (scene, position, rotation, scale) => {
 
   data.materials[0].uniforms[0].value = data.animation2D.matrix;
 
-  scene.addComponent(strawberry, data);
+  scene.addComponent(blueberry, data);
 };

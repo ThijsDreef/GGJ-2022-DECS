@@ -1,6 +1,6 @@
 {
   "frames": {
-    "blueBerryHD1.png": {
+    "StrawBerryHD1.png": {
       "frame": {
         "x": 1,
         "y": 1,
@@ -24,7 +24,7 @@
         "y": 0.5
       }
     },
-    "blueBerryHD2.png": {
+    "StrawBerryHD2.png": {
       "frame": {
         "x": 1,
         "y": 131,
@@ -48,7 +48,7 @@
         "y": 0.5
       }
     },
-    "blueBerryHD3.png": {
+    "StrawBerryHD3.png": {
       "frame": {
         "x": 1,
         "y": 261,
@@ -72,7 +72,7 @@
         "y": 0.5
       }
     },
-    "blueBerryHD4.png": {
+    "StrawBerryHD4.png": {
       "frame": {
         "x": 1,
         "y": 391,
@@ -96,10 +96,106 @@
         "y": 0.5
       }
     },
-    "blue-enemy-idle1.png": {
+    "blueBerryHD1.png": {
       "frame": {
         "x": 1,
         "y": 521,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "blueBerryHD2.png": {
+      "frame": {
+        "x": 1,
+        "y": 651,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "blueBerryHD3.png": {
+      "frame": {
+        "x": 1,
+        "y": 781,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "blueBerryHD4.png": {
+      "frame": {
+        "x": 1,
+        "y": 911,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "blue-enemy-idle1.png": {
+      "frame": {
+        "x": 1,
+        "y": 1041,
         "w": 32,
         "h": 32
       },
@@ -123,7 +219,7 @@
     "blue-enemy-idle2.png": {
       "frame": {
         "x": 1,
-        "y": 555,
+        "y": 1075,
         "w": 32,
         "h": 32
       },
@@ -147,7 +243,7 @@
     "blue-enemy-idle3.png": {
       "frame": {
         "x": 1,
-        "y": 589,
+        "y": 1109,
         "w": 32,
         "h": 32
       },
@@ -171,7 +267,7 @@
     "red-enemy-idle1.png": {
       "frame": {
         "x": 1,
-        "y": 623,
+        "y": 1143,
         "w": 32,
         "h": 32
       },
@@ -195,7 +291,7 @@
     "red-enemy-idle2.png": {
       "frame": {
         "x": 1,
-        "y": 657,
+        "y": 1177,
         "w": 32,
         "h": 32
       },
@@ -219,7 +315,7 @@
     "red-enemy-idle3.png": {
       "frame": {
         "x": 1,
-        "y": 691,
+        "y": 1211,
         "w": 32,
         "h": 32
       },
@@ -243,7 +339,7 @@
     "walkcycle-player1.png": {
       "frame": {
         "x": 1,
-        "y": 725,
+        "y": 1245,
         "w": 32,
         "h": 32
       },
@@ -267,7 +363,7 @@
     "walkcycle-player2.png": {
       "frame": {
         "x": 1,
-        "y": 759,
+        "y": 1279,
         "w": 32,
         "h": 32
       },
@@ -291,7 +387,7 @@
     "walkcycle-player3.png": {
       "frame": {
         "x": 1,
-        "y": 793,
+        "y": 1313,
         "w": 32,
         "h": 32
       },
@@ -315,7 +411,7 @@
     "Bullet1.png": {
       "frame": {
         "x": 1,
-        "y": 827,
+        "y": 1347,
         "w": 15,
         "h": 15
       },
@@ -330,78 +426,6 @@
       "sourceSize": {
         "w": 15,
         "h": 15
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "blueBerryHD7.png": {
-      "frame": {
-        "x": 1,
-        "y": 1,
-        "w": 128,
-        "h": 128
-      },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 128,
-        "h": 128
-      },
-      "sourceSize": {
-        "w": 128,
-        "h": 128
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "blueBerryHD6.png": {
-      "frame": {
-        "x": 1,
-        "y": 131,
-        "w": 128,
-        "h": 128
-      },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 128,
-        "h": 128
-      },
-      "sourceSize": {
-        "w": 128,
-        "h": 128
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "blueBerryHD5.png": {
-      "frame": {
-        "x": 1,
-        "y": 261,
-        "w": 128,
-        "h": 128
-      },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 128,
-        "h": 128
-      },
-      "sourceSize": {
-        "w": 128,
-        "h": 128
       },
       "pivot": {
         "x": 0.5,
@@ -416,7 +440,7 @@
     "format": "RGBA8888",
     "size": {
       "w": 130,
-      "h": 843
+      "h": 1363
     },
     "scale": 1
   }
