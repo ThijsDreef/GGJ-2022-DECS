@@ -39,7 +39,6 @@ export default (decs, canvas, gl) => {
 
   scene.executeOnDispose(mouseClickHandler(scene, player, 'fire'));
   scene.executeOnDispose(mouseMoveHandler(scene, canvas));
-  scene.executeOnDispose(mouseClickHandler(scene, player));
 
   scene.addSystem(meshRenderer);
   scene.addSystem(calculateTransforms);
