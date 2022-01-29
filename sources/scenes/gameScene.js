@@ -32,7 +32,7 @@ export default (decs, canvas, gl) => {
   scene.update(0);
   scene.executeOnDispose(resizeHandler(scene, canvas, gl));
 
-  const player = playerEntity(scene, [0, 0, -1], [0, 0, 0], [16, 16, 1]);
+  const player = playerEntity(scene, [0, 0, -1], [0, 0, 0], [35, 35, 1]);
   strawberry(scene, [64, 350, -1], [0, 0, 0], [16, 16, 1]);
   blueberry(scene, [300, 0, -1], [0, 0, 0], [16, 16, 1]);
   crosshair(scene, [0, 0, -1], [0, 0, 0], [16, 16, 1]);
