@@ -2,7 +2,6 @@ import transform from 'decs/Components/transform';
 import material from 'decs/Components/material';
 
 const defaultShoot = (scene, position, direction) => {
-  console.log('shooting');
   const bullet = scene.createEntity();
   scene.addComponent(bullet, {
     position: [...position],
