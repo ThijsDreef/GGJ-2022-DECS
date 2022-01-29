@@ -67,7 +67,7 @@ export default (decs, canvas, gl) => {
     height: TILE_HEIGHT,
   }, decs.resources.texture.getTexture('assets'), gl);
 
-  const player = playerEntity(scene, mapToTile(16, 16, -2), [0, 0, 0], [64, 64, 1]);
+  const player = playerEntity(scene, mapToTile(16, 16, -2), [0, 0, 0], [48, 48, 1]);
   strawberry(scene, mapToTile(28, 28, -2), [0, 0, 0], [16, 16, 1]);
   blueberry(scene, mapToTile(1, 4, -2), [0, 0, 0], [16, 16, 1]);
   crosshair(scene, [0, 0, -1], [0, 0, 0], [12, 12, 1]);
@@ -92,7 +92,6 @@ export default (decs, canvas, gl) => {
 
   scene.executeOnDispose(mouseClickHandler(scene, player, 'fire'));
   scene.executeOnDispose(mouseMoveHandler(scene, canvas));
-  scene.executeOnDispose(mouseClickHandler(scene, player));
 
   scene.addSystem(renderer2D);
   scene.addSystem(calculateTransforms);

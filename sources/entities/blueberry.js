@@ -1,6 +1,13 @@
 import transform from 'decs/Components/transform';
 import material from 'decs/Components/material';
 import animation2D from 'decs/Components/animation2D';
+import shotGunShoot from '../components/shots/shotGunShoot';
+
+const blueberryProxy = (
+  scene,
+  position,
+  direction,
+) => shotGunShoot(scene, position, direction, false, 5);
 
 export default (scene, position, rotation, scale) => {
   const blueberry = scene.createEntity();
@@ -34,6 +41,21 @@ export default (scene, position, rotation, scale) => {
       ]),
     ],
     active: {},
+    aggro: {
+      distance: 32 * 10,
+      target: ['player'],
+      onAggro: {
+        fire: {},
+      },
+    },
+    heading: [0, 0],
+    health: 50,
+    gun: {
+      shoot: blueberryProxy,
+      cooldown: 0.3,
+      timer: 0.0,
+    },
+    blueberry: {},
   };
 
   data.materials[0].uniforms[0].value = data.animation2D.matrix;
