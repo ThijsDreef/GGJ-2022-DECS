@@ -16,8 +16,10 @@ import tileMap from '../entities/tileMap';
 import renderer2D from '../systems/renderer2D';
 import headingPlayerSystem from '../systems/headingPlayerSystem';
 import headingEnemySystem from '../systems/headingEnemySystem';
-import ShootSystem from '../systems/ShootSystem';
 import cameraFollowSystem from '../systems/cameraFollowSystem';
+import shootSystem from '../systems/shootSystem';
+import playerBulletCollisionSystem from '../systems/collisionSystems/playerBulletCollisionSystem';
+import enemyBulletCollisionSystem from '../systems/collisionSystems/enemyBulletCollisionSystem';
 
 const TILE_WIDTH = 32;
 const TILE_HEIGHT = 32;
@@ -44,7 +46,7 @@ export default (decs, canvas, gl) => {
   }, decs.resources.texture.getTexture('assets'), gl);
 
   const player = playerEntity(scene, mapToTile(1, 1, -2), [0, 0, 0], [16, 16, 1]);
-  strawberry(scene, mapToTile(4, 4, -2), [0, 0, 0], [16, 16, 1]);
+  strawberry(scene, mapToTile(28, 28, -2), [0, 0, 0], [16, 16, 1]);
   blueberry(scene, mapToTile(1, 4, -2), [0, 0, 0], [16, 16, 1]);
   crosshair(scene, [0, 0, -1], [0, 0, 0], [12, 12, 1]);
 
@@ -59,7 +61,9 @@ export default (decs, canvas, gl) => {
         position,
       },
     });
-  });
+  }, ['player']);
+  const input = scene.createEntity();
+  scene.addComponent(input, { input: {} });
 
   scene.update(0);
   scene.executeOnDispose(resizeHandler(scene, canvas, gl));
@@ -77,9 +81,11 @@ export default (decs, canvas, gl) => {
   scene.addSystem(aggroSystem);
   scene.addSystem(headingPlayerSystem);
   scene.addSystem(headingEnemySystem);
-  scene.addSystem(ShootSystem);
+  scene.addSystem(shootSystem);
+  scene.addSystem(playerBulletCollisionSystem);
+  scene.addSystem(enemyBulletCollisionSystem);
 
-  scene.executeOnDispose(inputHandler(scene, player, {
+  scene.executeOnDispose(inputHandler(scene, input, {
     w: 'moveUp',
     a: 'moveLeft',
     s: 'moveDown',

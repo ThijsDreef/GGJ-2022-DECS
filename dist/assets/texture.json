@@ -263,6 +263,30 @@
         "x": 0.5,
         "y": 0.5
       }
+    },
+    "Bullet1.png": {
+      "frame": {
+        "x": 1,
+        "y": 375,
+        "w": 15,
+        "h": 15
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 15,
+        "h": 15
+      },
+      "sourceSize": {
+        "w": 15,
+        "h": 15
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
     }
   },
   "meta": {
@@ -272,7 +296,7 @@
     "format": "RGBA8888",
     "size": {
       "w": 34,
-      "h": 374
+      "h": 391
     },
     "scale": 1
   }

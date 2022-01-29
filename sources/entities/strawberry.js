@@ -13,11 +13,11 @@ const defaultShoot = (scene, position, direction) => {
     mesh: scene.resources.geometry.getModel('sprite'),
     materials: [
       material('sprite', [
-        { name: 'textureMatrix', value: scene.resources.sprites.getSpriteTransformation('red-enemy-idle1.png') },
+        { name: 'textureMatrix', value: scene.resources.sprites.getSpriteTransformation('Bullet1.png') },
         { name: 'textureAtlas', value: scene.resources.texture.getTexture('assets') },
       ]),
     ],
-
+    enemyBullet: {},
   });
 };
 
@@ -45,7 +45,7 @@ export default (scene, position, rotation, scale) => {
       },
     },
     heading: [0, 0],
-
+    strawberry: {},
     gun: {
       shoot: defaultShoot,
       cooldown: 0.3,
