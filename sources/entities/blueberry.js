@@ -52,7 +52,7 @@ export default (scene, position, rotation, scale) => {
     health: 50,
     gun: {
       shoot: blueberryProxy,
-      cooldown: 0.3,
+      cooldown: 0.5,
       timer: 0.0,
     },
     blueberry: {},
