@@ -8,13 +8,14 @@ import strawberry from '../entities/strawberry';
 import blueberry from '../entities/blueberry';
 import movementSystem from '../systems/movementSystem';
 import playerMovementSystem from '../systems/playerMovementSystem';
-import mouseClickHandler from '../systems/mouseClickHandler';
-import mouseMoveHandler from '../systems/mouseMoveHandler';
+import mouseClickHandler from '../onDispose/mouseClickHandler';
+import mouseMoveHandler from '../onDispose/mouseMoveHandler';
 import crosshairMovementSystem from '../systems/crosshairMovementSystem';
 import crosshair from '../entities/crosshair';
 import aggroSystem from '../systems/aggroSystem';
 import headingPlayerSystem from '../systems/headingPlayerSystem';
 import headingEnemySystem from '../systems/headingEnemySystem';
+import ShootSystem from '../systems/ShootSystem';
 
 export default (decs, canvas, gl) => {
   const scene = decs.createScene();
@@ -30,6 +31,7 @@ export default (decs, canvas, gl) => {
   blueberry(scene, [-64, 0, -1], [0, 0, 0], [16, 16, 1]);
   crosshair(scene, [0, 0, -1], [0, 0, 0], [16, 16, 1]);
 
+  scene.executeOnDispose(mouseClickHandler(scene, player, 'fire'));
   scene.executeOnDispose(mouseMoveHandler(scene, canvas));
   scene.executeOnDispose(mouseClickHandler(scene, player));
 
@@ -41,6 +43,7 @@ export default (decs, canvas, gl) => {
   scene.addSystem(aggroSystem);
   scene.addSystem(headingPlayerSystem);
   scene.addSystem(headingEnemySystem);
+  scene.addSystem(ShootSystem);
 
   scene.executeOnDispose(inputHandler(scene, player, {
     w: 'moveUp',
