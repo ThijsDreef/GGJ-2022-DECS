@@ -2,6 +2,7 @@ import camera from 'decs/Components/camera';
 import meshRenderer from 'decs/systems/meshRenderer';
 import calculateTransforms from 'decs/systems/calculateTransforms';
 import inputHandler from 'decs/Utils/inputHandler';
+import animate2D from 'decs/Systems/animate2D';
 import resizeHandler from '../onDispose/resizeHandler';
 import playerEntity from '../entities/playerEntity';
 import strawberry from '../entities/strawberry';
@@ -16,7 +17,6 @@ import crosshair from '../entities/crosshair';
 import aggroSystem from '../systems/aggroSystem';
 import headingPlayerSystem from '../systems/headingPlayerSystem';
 import headingEnemySystem from '../systems/headingEnemySystem';
-import animate2D from 'decs/Systems/animate2D';
 import playerBulletCollisionSystem from '../systems/collisionSystems/playerBulletCollisionSystem';
 import enemyBulletCollisionSystem from '../systems/collisionSystems/enemyBulletCollisionSystem';
 import healthSystem from '../systems/healthSystem';
@@ -39,7 +39,6 @@ export default (decs, canvas, gl) => {
 
   scene.executeOnDispose(mouseClickHandler(scene, player, 'fire'));
   scene.executeOnDispose(mouseMoveHandler(scene, canvas));
-  scene.executeOnDispose(mouseClickHandler(scene, player));
 
   scene.addSystem(meshRenderer);
   scene.addSystem(calculateTransforms);

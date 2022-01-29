@@ -1,27 +1,13 @@
 import transform from 'decs/Components/transform';
 import material from 'decs/Components/material';
 import animation2D from 'decs/Components/animation2D';
+import defaultShoot from '../components/shots/defaultShoot';
 
-const defaultShoot = (scene, position, direction) => {
-  const bullet = scene.createEntity();
-  scene.addComponent(bullet, {
-    position: [...position],
-    rotation: [0, 0, 0],
-    scale: [4, 4],
-    active: {},
-    acceleration: [...direction].map((item) => item * 1000),
-    transform: transform(),
-    mesh: scene.resources.geometry.getModel('sprite'),
-    materials: [
-      material('sprite', [
-        { name: 'textureMatrix', value: scene.resources.sprites.getSpriteTransformation('Bullet1.png') },
-        { name: 'textureAtlas', value: scene.resources.texture.getTexture('assets') },
-      ]),
-    ],
-    enemyBullet: {},
-    damage: 25,
-  });
-};
+const strawberryProxy = (
+  scene,
+  position,
+  direction,
+) => defaultShoot(scene, position, direction, false, 10);
 
 export default (scene, position, rotation, scale) => {
   const strawberry = scene.createEntity();
@@ -47,7 +33,7 @@ export default (scene, position, rotation, scale) => {
       ]),
     ],
     active: {},
-    
+
     aggro: {
       distance: 32 * 10,
       target: ['player'],
@@ -59,12 +45,11 @@ export default (scene, position, rotation, scale) => {
     strawberry: {},
     health: 50,
     gun: {
-      shoot: defaultShoot,
+      shoot: strawberryProxy,
       cooldown: 0.3,
       timer: 0.0,
     },
-  }
+  };
   data.materials[0].uniforms[0].value = data.animation2D.matrix;
-
   scene.addComponent(strawberry, data);
 };
