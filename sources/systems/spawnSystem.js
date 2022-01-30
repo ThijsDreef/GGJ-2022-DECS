@@ -27,7 +27,7 @@ export default (scene) => {
           Math.floor(Math.random() * enemiesToSpawn.length)
         ](
           scene,
-          mapToTile(...generateValidSafeWorldSpacePosition(position), -1),
+          mapToTile(...generateValidSafeWorldSpacePosition(position), -3),
           [0, 0, 0],
           [20, 20, 1],
         );
