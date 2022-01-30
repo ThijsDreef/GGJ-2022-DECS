@@ -27,6 +27,7 @@ import mapToTile from '../utils/mapToTile';
 import deathSystem from '../systems/deathSystem';
 import saveScoreSystem from '../systems/storeScoreSystem';
 import menuScene from './menuScene';
+import autoRotateSystem from '../systems/autoRotateSystem';
 import enemyMovementSystem from '../systems/enemyMovementSystem';
 
 const TILE_WIDTH = 32;
@@ -70,7 +71,7 @@ export default (decs, canvas, gl) => {
     height: TILE_HEIGHT,
   }, decs.resources.texture.getTexture('assets'), gl);
 
-  const player = playerEntity(scene, mapToTile(16, 16, -2), [0, 0, 0], [48, 48, 1]);
+  const player = playerEntity(scene, mapToTile(16, 16, -2), [0, 0, 0], [177 / 8, 256 / 8, 1]);
   crosshair(scene, [0, 0, -1], [0, 0, 0], [12, 12, 1]);
 
   scene.update(0);
@@ -100,11 +101,9 @@ export default (decs, canvas, gl) => {
   scene.executeOnDispose(mouseClickHandler(scene, player, 'fire'));
   scene.executeOnDispose(mouseMoveHandler(scene, canvas));
 
-  scene.addSystem(renderer2D);
-  scene.addSystem(calculateTransforms);
   scene.addSystem(movementSystem);
   scene.addSystem(playerMovementSystem);
-
+  scene.addSystem(autoRotateSystem);
   scene.addSystem(playerTileCollisionSystem);
   scene.addSystem(cameraFollowSystem);
   scene.addSystem(crosshairMovementSystem);
@@ -121,6 +120,8 @@ export default (decs, canvas, gl) => {
   scene.addSystem(deathSystem);
   scene.addSystem(saveScoreSystem);
   scene.addSystem(enemyMovementSystem);
+  scene.addSystem(renderer2D);
+  scene.addSystem(calculateTransforms);
 
   scene.addSystem(() => scene.query(['death'], () => {
     scene.resources.popScene();

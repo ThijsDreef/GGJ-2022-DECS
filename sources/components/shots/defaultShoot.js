@@ -3,10 +3,11 @@ import defaultEntity from '../../entities/defaultEntity';
 export default (scene, position, direction, isPlayerBullet, damage) => {
   const bullet = scene.createEntity();
   scene.addComponent(bullet, {
-    ...defaultEntity(scene, [...position], [6, 6], 'Bullet1.png'),
+    ...defaultEntity(scene, [...position], [10, 10, 1], 'blade.png'),
     active: {},
-    acceleration: [...direction].map((item) => item * 800),
+    acceleration: [...direction].map((item) => item * 400),
     [isPlayerBullet ? 'playerBullet' : 'enemyBullet']: {},
     damage,
+    rotationSpeed: 1440,
   });
 };

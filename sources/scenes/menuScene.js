@@ -50,7 +50,7 @@ export default (decs, canvas, gl) => {
     active: {},
   });
 
-  playerEntity(scene, [-250, -50, -2], [0, 0, 20], [48, 48, 1]);
+  playerEntity(scene, [-250, -50, -2], [0, 0, 20], [177 / 4, 256 / 4, 1]);
   blueberry(scene, [300, -75, -2], [0, 0, -20], [32, 32, 1]);
   strawberry(scene, [225, -50, -2], [0, 0, 20], [32, 32, 1]);
 
@@ -73,8 +73,8 @@ export default (decs, canvas, gl) => {
     scene.query(['mousedown'], () => {
       scene.resources.popScene();
       scene.resources.pushScene(gameScene(decs, canvas, gl));
-    })
-  })
+    });
+  });
 
   scene.addSystem(calculateTransforms);
   scene.addSystem(renderer2D);

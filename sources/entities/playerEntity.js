@@ -7,7 +7,7 @@ const playerBasicWeaponProxy = (
   scene,
   position,
   direction,
-) => defaultShoot(scene, position, direction, true, 15);
+) => defaultShoot(scene, position, direction, true, 50);
 
 export default (scene, position, rotation, scale) => {
   const player = scene.createEntity();
@@ -37,7 +37,7 @@ export default (scene, position, rotation, scale) => {
     ],
     gun: {
       shoot: playerBasicWeaponProxy,
-      cooldown: 0.1,
+      cooldown: 0.5,
       timer: 0.0,
     },
     player: {},

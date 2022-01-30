@@ -25,7 +25,7 @@ export default (scene) => {
         scene,
         mapToTile(...generateValidWorldSpacePosition(), -1),
         [0, 0, 0],
-        [16, 16, 1],
+        [20, 20, 1],
       );
     }
   });
