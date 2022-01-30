@@ -4,8 +4,6 @@ import inputHandler from 'decs/Utils/inputHandler';
 import animate2D from 'decs/Systems/animate2D';
 import resizeHandler from '../onDispose/resizeHandler';
 import playerEntity from '../entities/playerEntity';
-import strawberry from '../entities/strawberry';
-import blueberry from '../entities/blueberry';
 import movementSystem from '../systems/movementSystem';
 import playerMovementSystem from '../systems/playerMovementSystem';
 import mouseClickHandler from '../onDispose/mouseClickHandler';
@@ -26,6 +24,8 @@ import healthSystem from '../systems/healthSystem';
 import timerSystem from '../systems/timerSystem';
 import spawnSystem from '../systems/spawnSystem';
 import mapToTile from '../utils/mapToTile';
+import deathSystem from '../systems/deathSystem';
+import saveScoreSystem from '../systems/storeScoreSystem';
 
 const TILE_WIDTH = 32;
 const TILE_HEIGHT = 32;
@@ -89,6 +89,9 @@ export default (decs, canvas, gl) => {
   const timer = scene.createEntity();
   scene.addComponent(timer, { timeSinceStart: 0 });
 
+  const score = scene.createEntity();
+  scene.addComponent(score, { score: 0 });
+
   scene.update(0);
   scene.executeOnDispose(resizeHandler(scene, canvas, gl));
 
@@ -113,6 +116,8 @@ export default (decs, canvas, gl) => {
   scene.addSystem(healthSystem);
   scene.addSystem(timerSystem);
   scene.addSystem(spawnSystem);
+  scene.addSystem(deathSystem);
+  scene.addSystem(saveScoreSystem);
 
   scene.executeOnDispose(inputHandler(scene, input, {
     w: 'moveUp',

@@ -50,6 +50,7 @@ export default (scene, position, rotation, scale) => {
       timer: 0.0,
     },
     enemy: {},
+    points: 50,
   };
   data.materials[0].uniforms[0].value = data.animation2D.matrix;
   scene.addComponent(strawberry, data);

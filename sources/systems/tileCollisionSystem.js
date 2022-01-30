@@ -1,5 +1,5 @@
 export default (scene, dt) => {
-    scene.query('tileCollsion', ({ tileCollision }) => {
-        
-    })
-}
+  scene.query('tileCollsion', ({ tileCollision }) => {
+
+  });
+};
