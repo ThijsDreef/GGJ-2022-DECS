@@ -56,6 +56,7 @@ export default (scene, position, rotation, scale) => {
       timer: 0.0,
     },
     blueberry: {},
+    points: 50,
     enemy: {},
   };
 
