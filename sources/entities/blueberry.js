@@ -2,6 +2,7 @@ import transform from 'decs/Components/transform';
 import material from 'decs/Components/material';
 import animation2D from 'decs/Components/animation2D';
 import shotGunShoot from '../components/shots/shotGunShoot';
+import { TILE_SIZE } from './tileMap';
 
 const blueberryProxy = (
   scene,
@@ -43,7 +44,7 @@ export default (scene, position, rotation, scale) => {
     ],
     active: {},
     aggro: {
-      distance: 32 * 10,
+      distance: TILE_SIZE * 10,
       target: ['player'],
       onAggro: {
         fire: {},

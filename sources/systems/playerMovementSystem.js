@@ -1,4 +1,6 @@
-const MAX_SPEED = 6 * 32;
+import { TILE_SIZE } from "../entities/tileMap";
+
+const MAX_SPEED = 6 * TILE_SIZE;
 
 export default (scene) => {
   scene.query(['input'], ({

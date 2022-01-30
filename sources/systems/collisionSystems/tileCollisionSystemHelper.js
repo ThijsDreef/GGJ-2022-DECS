@@ -1,4 +1,4 @@
-const TILE_SIZE = 32;
+import { TILE_SIZE } from "../../entities/tileMap";
 
 export default (scene, dt, entitySpecifierOne, entitySpecifierTwo, collisionCallback) => {
   scene.query(['position', 'tileCollision'], (outerEntityData, outerEntityId) => {

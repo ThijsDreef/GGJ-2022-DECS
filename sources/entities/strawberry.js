@@ -2,6 +2,7 @@ import transform from 'decs/Components/transform';
 import material from 'decs/Components/material';
 import animation2D from 'decs/Components/animation2D';
 import sniperShoot from '../components/shots/sniperShoot';
+import { TILE_SIZE } from './tileMap';
 
 const strawberryProxy = (
   scene,
@@ -35,7 +36,7 @@ export default (scene, position, rotation, scale) => {
     active: {},
 
     aggro: {
-      distance: 32 * 14,
+      distance: TILE_SIZE * 14,
       target: ['player'],
       onAggro: {
         fire: {},
