@@ -27,6 +27,7 @@ import mapToTile from '../utils/mapToTile';
 import deathSystem from '../systems/deathSystem';
 import saveScoreSystem from '../systems/storeScoreSystem';
 import menuScene from './menuScene';
+import enemyMovementSystem from '../systems/enemyMovementSystem';
 
 const TILE_WIDTH = 32;
 const TILE_HEIGHT = 32;
@@ -119,6 +120,7 @@ export default (decs, canvas, gl) => {
   scene.addSystem(spawnSystem);
   scene.addSystem(deathSystem);
   scene.addSystem(saveScoreSystem);
+  scene.addSystem(enemyMovementSystem);
 
   scene.addSystem(() => scene.query(['death'], () => {
     scene.resources.popScene();

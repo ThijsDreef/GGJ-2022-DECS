@@ -15,6 +15,7 @@ export default (scene, position, rotation, scale) => {
     position,
     rotation,
     scale,
+    acceleration: [0, 0],
     transform: transform(),
     mesh: scene.resources.geometry.getModel('sprite'),
     animation2D: animation2D([
@@ -58,6 +59,7 @@ export default (scene, position, rotation, scale) => {
     blueberry: {},
     points: 50,
     enemy: {},
+    enemyMovement: {},
   };
 
   data.materials[0].uniforms[0].value = data.animation2D.matrix;
