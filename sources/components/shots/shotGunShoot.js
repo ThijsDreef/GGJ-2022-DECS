@@ -12,6 +12,7 @@ export default (scene, position, direction, isPlayerBullet, damage) => {
         (item) => item * 200 + (Math.random() * 2 - 1) * 100 + Math.random() * 0.1,
       ),
       [isPlayerBullet ? 'playerBullet' : 'enemyBullet']: {},
+      bullet: {},
       damage,
     });
   }

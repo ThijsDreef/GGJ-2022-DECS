@@ -29,6 +29,7 @@ import saveScoreSystem from '../systems/storeScoreSystem';
 import menuScene from './menuScene';
 import autoRotateSystem from '../systems/autoRotateSystem';
 import enemyMovementSystem from '../systems/enemyMovementSystem';
+import tileBulletCollisionSystem from '../systems/collisionSystems/tileBulletCollisionSystem';
 
 const TILE_WIDTH = 32;
 const TILE_HEIGHT = 32;
@@ -73,9 +74,16 @@ export default (decs, canvas, gl) => {
 
   const player = playerEntity(scene, mapToTile(16, 16, -2), [0, 0, 0], [177 / 8, 256 / 8, 1]);
   crosshair(scene, [0, 0, -1], [0, 0, 0], [12, 12, 1]);
+  const input = scene.createEntity();
+  scene.addComponent(input, { input: {} });
 
-  scene.update(0);
+  const timer = scene.createEntity();
+  scene.addComponent(timer, { timeSinceStart: 0 });
 
+  const score = scene.createEntity();
+  scene.addComponent(score, { score: 0 });
+
+  scene.executeDelayedCalls();
   scene.query(['position'], ({ position }, playerId) => {
     scene.addComponent(scene.createEntity(), {
       camera: camera(),
@@ -86,42 +94,40 @@ export default (decs, canvas, gl) => {
       },
     });
   }, ['player']);
-  const input = scene.createEntity();
-  scene.addComponent(input, { input: {} });
+  scene.executeDelayedCalls();
 
-  const timer = scene.createEntity();
-  scene.addComponent(timer, { timeSinceStart: 0 });
-
-  const score = scene.createEntity();
-  scene.addComponent(score, { score: 0 });
-
-  scene.update(0);
   scene.executeOnDispose(resizeHandler(scene, canvas, gl));
 
   scene.executeOnDispose(mouseClickHandler(scene, player, 'fire'));
   scene.executeOnDispose(mouseMoveHandler(scene, canvas));
+  scene.addSystem(aggroSystem);
 
   scene.addSystem(movementSystem);
   scene.addSystem(playerMovementSystem);
-  scene.addSystem(autoRotateSystem);
-  scene.addSystem(playerTileCollisionSystem);
-  scene.addSystem(cameraFollowSystem);
-  scene.addSystem(crosshairMovementSystem);
-  scene.addSystem(aggroSystem);
-  scene.addSystem(headingPlayerSystem);
-  scene.addSystem(headingEnemySystem);
-  scene.addSystem(shootSystem);
   scene.addSystem(playerBulletCollisionSystem);
   scene.addSystem(enemyBulletCollisionSystem);
-  scene.addSystem(animate2D);
-  scene.addSystem(healthSystem);
+  scene.addSystem(playerTileCollisionSystem);
+  scene.addSystem(tileBulletCollisionSystem);
+  scene.addSystem(cameraFollowSystem);
+  scene.addSystem(crosshairMovementSystem);
+  scene.addSystem(headingPlayerSystem);
+  scene.addSystem(headingEnemySystem);
+
   scene.addSystem(timerSystem);
   scene.addSystem(spawnSystem);
   scene.addSystem(deathSystem);
+  scene.addSystem(healthSystem);
   scene.addSystem(saveScoreSystem);
   scene.addSystem(enemyMovementSystem);
-  scene.addSystem(renderer2D);
+
+  scene.addSystem(animate2D);
   scene.addSystem(calculateTransforms);
+  scene.addSystem(renderer2D);
+
+  scene.addSystem(shootSystem);
+  scene.addSystem(autoRotateSystem);
+
+
 
   scene.addSystem(() => scene.query(['death'], () => {
     scene.resources.popScene();

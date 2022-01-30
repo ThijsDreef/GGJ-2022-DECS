@@ -8,6 +8,7 @@ export default (scene, position, direction, isPlayerBullet, damage) => {
     acceleration: [...direction].map((item) => item * 400),
     [isPlayerBullet ? 'playerBullet' : 'enemyBullet']: {},
     damage,
+    bullet: {},
     rotationSpeed: 1440,
   });
 };
