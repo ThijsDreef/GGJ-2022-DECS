@@ -26,6 +26,7 @@ import spawnSystem from '../systems/spawnSystem';
 import mapToTile from '../utils/mapToTile';
 import deathSystem from '../systems/deathSystem';
 import saveScoreSystem from '../systems/storeScoreSystem';
+import menuScene from './menuScene';
 
 const TILE_WIDTH = 32;
 const TILE_HEIGHT = 32;
@@ -118,6 +119,11 @@ export default (decs, canvas, gl) => {
   scene.addSystem(spawnSystem);
   scene.addSystem(deathSystem);
   scene.addSystem(saveScoreSystem);
+
+  scene.addSystem(() => scene.query(['death'], () => {
+    scene.resources.popScene();
+    scene.resources.pushScene(menuScene(decs, canvas, gl));
+  }, ['active', 'player']));
 
   scene.executeOnDispose(inputHandler(scene, input, {
     w: 'moveUp',
