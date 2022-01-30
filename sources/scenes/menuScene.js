@@ -35,6 +35,16 @@ export default (decs, canvas, gl) => {
     active: {},
   });
 
+  scene.addComponent(scene.createEntity(), {
+    ...defaultEntity(scene, [300, -120, -1], [20, 20, 1], 'blueJuice.png'),
+    active: {},
+  });
+
+  scene.addComponent(scene.createEntity(), {
+    ...defaultEntity(scene, [250, -80, -1], [20, 20, 1], 'strawberryJam.png'),
+    active: {},
+  });
+
   playerEntity(scene, [-250, -50, -2], [0, 0, 20], [177 / 4, 256 / 4, 1]);
   blueberry(scene, [300, -75, -2], [0, 0, -20], [32, 32, 1]);
   strawberry(scene, [225, -50, -2], [0, 0, 20], [32, 32, 1]);

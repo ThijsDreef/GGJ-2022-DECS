@@ -1,4 +1,4 @@
-import { TILE_SIZE } from "../entities/tileMap";
+import { TILE_SIZE } from '../entities/tileMap';
 
 const MAX_SPEED = 6 * TILE_SIZE;
 

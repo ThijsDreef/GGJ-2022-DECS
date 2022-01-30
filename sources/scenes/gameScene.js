@@ -30,7 +30,11 @@ import menuScene from './menuScene';
 import autoRotateSystem from '../systems/autoRotateSystem';
 import enemyMovementSystem from '../systems/enemyMovementSystem';
 import tileBulletCollisionSystem from '../systems/collisionSystems/tileBulletCollisionSystem';
-import playerJamCollisionSystem from '../systems/collisionSystems/playerJamCollisionSystem';
+import textEntity from '../entities/textEntity';
+import WorldSpaceScreen from '../WorldSpaceScreen';
+import screenPositionSystem from '../systems/screenPositionSystem';
+import { mat4 } from 'gl-matrix';
+import scoreInterpolateSystem from '../systems/scoreInterpolateSystem';
 import spawnJam from '../systems/spawnJam';
 
 const TILE_WIDTH = 32;
@@ -76,6 +80,12 @@ export default (decs, canvas, gl) => {
 
   const player = playerEntity(scene, mapToTile(16, 16, -2), [0, 0, 0], [177 / 8, 256 / 8, 1]);
   crosshair(scene, [0, 0, -1], [0, 0, 0], [12, 12, 1]);
+
+  textEntity(scene, gl, 'score: 0', [-WorldSpaceScreen.width / 2, WorldSpaceScreen.height / 2 - 200, -1], 200, {
+    interpolatedScore: 0,
+    screenPosition: [-WorldSpaceScreen.width / 2, WorldSpaceScreen.height / 2, -1],
+  });
+
   const input = scene.createEntity();
   scene.addComponent(input, { input: {} });
 
@@ -88,8 +98,16 @@ export default (decs, canvas, gl) => {
   scene.executeDelayedCalls();
   scene.query(['position'], ({ position }, playerId) => {
     scene.addComponent(scene.createEntity(), {
-      camera: camera(),
-      position: [0, 0, 0],
+      camera: {
+        view: mat4.create([
+          1, 0, 0, 0,
+          0, 1, 0, 0,
+          0, 0, 1, 0,
+          16 * 32, 16 * 32, 0, 1,
+        ]),
+        projection: mat4.create(),
+      },
+      position: [16 * 32, 20 * 32, 0],
       target: {
         entity: playerId,
         position,
@@ -102,8 +120,9 @@ export default (decs, canvas, gl) => {
 
   scene.executeOnDispose(mouseClickHandler(scene, player, 'fire'));
   scene.executeOnDispose(mouseMoveHandler(scene, canvas));
+  scene.addSystem(scoreInterpolateSystem);
   scene.addSystem(aggroSystem);
-
+  scene.addSystem(screenPositionSystem);
   scene.addSystem(movementSystem);
   scene.addSystem(playerMovementSystem);
   scene.addSystem(playerBulletCollisionSystem);
@@ -114,10 +133,7 @@ export default (decs, canvas, gl) => {
   scene.addSystem(crosshairMovementSystem);
   scene.addSystem(headingPlayerSystem);
   scene.addSystem(headingEnemySystem);
-  scene.addSystem(shootSystem);
-  scene.addSystem(playerJamCollisionSystem);
-  scene.addSystem(animate2D);
-  scene.addSystem(healthSystem);
+
   scene.addSystem(timerSystem);
   scene.addSystem(spawnSystem);
   scene.addSystem(deathSystem);
@@ -132,6 +148,7 @@ export default (decs, canvas, gl) => {
   scene.addSystem(shootSystem);
   scene.addSystem(autoRotateSystem);
   scene.addSystem(spawnJam);
+
 
   scene.addSystem(() => scene.query(['death'], () => {
     scene.resources.popScene();
