@@ -2,7 +2,7 @@ import transform from 'decs/Components/transform';
 import material from 'decs/Components/material';
 import BatchedSprite from 'decs/WebGL/renderResources/BatchedSprite';
 
-const TILE_SIZE = 32;
+export const TILE_SIZE = 32;
 
 export default (scene, position, data, texture, gl) => {
   const tileEntity = scene.createEntity();
